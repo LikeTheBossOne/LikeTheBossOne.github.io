@@ -57,7 +57,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Game Developer - Lifelong Student - Game Enthusiast
+            <p class="masthead-subheading font-weight-light mb-0">Game Developer - Lifelong Student - Engine Developer
             </p>
         </div>
     </header>
@@ -142,7 +142,7 @@
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div style="text-align: center; height: 83px;">
                         <h2 style="line-height: 83px;">
-                            Boss Game Engine
+                            SFML Game Engine
                         </h2>
                     </div>
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -303,23 +303,42 @@
                 <div class="modal-body text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
-                                    id="portfolioModal1Label">Boss Game Engine</h2>
+                                    id="portfolioModal1Label">SFML Game Engine</h2>
                                 <!-- Icon Divider-->
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="" />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
+                                <div style="text-align: left;">
+                                    <p class="modal-par">
+                                        This was a project I completed as part of CSC 481 (Game Engine Foundations) at
+                                        NC State University. In this project, I created an extensible 2D Game Engine
+                                        complete with scripting with JavaScript, Networking with ZMQ, a custom replay
+                                        system, and graphics with SFML.
+                                    </p>
+                                    <br />
+                                    <h3>
+                                        Architecture
+                                    </h3>
+                                    <br />
+                                    <h3>
+                                        Networking
+                                    </h3>
+                                    <br />
+                                    <h3>
+                                        Scripting
+                                    </h3>
+                                    <br />
+                                    <h3>
+                                        Replay System
+                                    </h3>
+                                </div>
+                                <br />
                                 <button class="btn btn-primary" data-dismiss="modal">
                                     <i class="fas fa-times fa-fw"></i>
                                     Close Window
@@ -342,7 +361,7 @@
                 <div class="modal-body text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
                                     id="portfolioModal2Label">ECS Engine</h2>
@@ -363,8 +382,7 @@
                                         for Game Engines by implementing that architecture in my own engine from
                                         scratch.
                                         Below, I will explain how the ECS Architecture works and will provide examples
-                                        from
-                                        my own code to show how I implemented it.
+                                        from my own code to show how I implemented it.
 
                                     </p>
                                     <p class="modal-par">
@@ -376,8 +394,8 @@
                                     </h3>
                                     <p class="modal-par">
                                         This is a data-oriented approach to game development, with the goal being to
-                                        maximize performance by minimizing cache misses. It works by concentrating and
-                                        aligning data in memory to take advantage of cache prefetching. This makes
+                                        maximize performance by minimizing cache misses. It works by packing data in
+                                        memory to take advantage of cache prefetching. This makes
                                         iterating over data, instead of objects, massively more performant.
                                     </p>
                                     <p class="modal-par">
@@ -433,7 +451,7 @@
                                     </p>
                                     <ul class="modal-par">
                                         <li>
-                                            All Systems register against this manager to be used.
+                                            All Systems automatically register against this manager.
                                             <script
                                                 src="https://gist.github.com/LikeTheBossOne/161e7d0e76912befc473243c4e9f0269.js"></script>
                                         </li>
@@ -446,7 +464,7 @@
 
                                     <p class="modal-par">
                                         The meat of my ECS Engine is in the ComponentManager and ComponentArray.
-                                        This is where we align and index the data in a way that it can both be easily
+                                        This is where we pack and index the data in a way that it can both be easily
                                         accessible and maximize cache hits.
                                     </p>
                                     <ul class="modal-par">
@@ -468,7 +486,7 @@
                                         </li>
                                         <li>
                                             As displayed above, my implementation makes use of a second map of entities
-                                            to indexes. This allows us to continue packing components together even when
+                                            to indexes. This allows it to continue packing components together even when
                                             an entity is destroyed (usually destruction would leave a hole in the
                                             array).
                                         </li>
@@ -525,25 +543,61 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+                                <div style="text-align: left;"></div>
+                                <p class="modal-par">
+
                                 </p>
+                                <ul class="modal-par">
+                                    <li>
+                                        Character Movement/Physics
+                                    </li>
+                                    <li>
+                                        Setup and Ensured Networking
+                                    </li>
+                                    <li>
+                                        Team Lead: Reviewed all PRs
+                                    </li>
+                                    <li>
+                                        Extensible Notification System
+                                    </li>
+                                    <li>
+                                        Buyable Debris/Objects System
+                                    </li>
+                                    <li>
+                                        Collectable Resources & Resource Volume Zones
+                                    </li>
+                                    <li>
+                                        Economy/XP
+                                    </li>
+                                    <li>
+                                        FaceOff Gamemode
+                                    </li>
+                                    <li>
+                                        Inventory & Equipment Managers
+                                    </li>
+                                    <li>
+                                        Gun Shooting, Reloading, Switching
+                                    </li>
+                                    <li>
+                                        Persistence between scenes, and scene switching
+                                    </li>
+                                </ul>
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/cnX-EOUraUc"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
-                                <!-- TODO: Stop video on close-->
-                                <button class="btn btn-primary" data-dismiss="modal">
-                                    <i class="fas fa-times fa-fw"></i>
-                                    Close Window
-                                </button>
                             </div>
+                            <!-- TODO: Stop video on close-->
+                            <button class="btn btn-primary" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Portfolio Modal 4-->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
@@ -566,23 +620,23 @@
                                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="" />
                                 <!-- Portfolio Modal - Text-->
+                                <div style="text-align: left;"></div>
                                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
                                     assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
                                     velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
                                 </p>
-                                <button class="btn btn-primary" data-dismiss="modal">
-                                    <i class="fas fa-times fa-fw"></i>
-                                    Close Window
-                                </button>
                             </div>
+                            <button class="btn btn-primary" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Portfolio Modal 5-->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog"
@@ -595,7 +649,7 @@
                 <div class="modal-body text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
                                     id="portfolioModal5Label">Procedural Content Generation</h2>
@@ -605,13 +659,105 @@
                                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="" />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
+                                <div style="text-align: left;">
+                                    <p class="modal-par">
+                                        In my CSC 484 (Game AI) class at NC State University, I was tasked with creating
+                                        a procedurally generated area that consisted of larger areas (rooms) connected
+                                        by smaller areas (hallways) in Processing (with Java). We were given some
+                                        examples of simple approaches to take such as using Poisson Disks and recursive
+                                        subdvision, but I had a specific goal in mind, which was to emulate the dungeons
+                                        used in games like Pokemon Mystery Dungeon.
+                                    </p>
+                                    <a class="modal-par"
+                                        href="https://github.com/LikeTheBossOne/ProceduralContentGen">Github Link</a>
+                                    <br />
+                                    <br />
+
+                                    <i>Example dungeon layout from Pokemon Mystery Dungeon</i>
+                                    <br />
+                                    <img style="width: 50%" class="img-fluid rounded mb-5"
+                                        src="assets/img/portfolio/pmd.png" alt="PMD Image" />
+                                    <br />
+
+                                    <p class="modal-par">
+                                        My solution to the problem starts by creating rooms randomly around the given
+                                        area. My algorithm takes a configurable number of attempts to place rooms of
+                                        varying size inside the area. If any room is within a configurable distance from
+                                        another room, then the room is thrown out and we try again.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/bbc42b3be34f3153c425a0f77fda22c8.js"></script>
+                                    <br />
+
+                                    <p class="modal-par">
+                                        The next thing I did is run a Delaunay Triangulation over the center points of
+                                        each room. Delaunay Triangulations are frequently used as part of facial
+                                        recognition, and they work by ensuring that no point x is inside of the
+                                        circumcircle created by connecting points a, b, and c into a triangle.
+                                    </p>
+                                    <img
+                                        src="https://lh3.googleusercontent.com/proxy/HVS00WwXgr9_l9XV8sFJLbT5uvQEqzpieL7gq-ipf2oT28Vf8-y-U5mk8gkCsNBeu-XQ6oxf3pvQjwUuaSx1lgUtJgDY">
+                                    <br />
+                                    <br />
+                                    <p class="modal-par">
+                                        I used them to ensure that hallways were never extremely long and spanning
+                                        across multiple rooms. In short, they had the affect of making adjacent rooms in
+                                        close proximity only connect to each other. If a set of rooms passed the
+                                        triangulation, I added the edges between each room to a weighted (by length)
+                                        graph so that I could keep track of connections between rooms.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/f21f3b905fda0058397343977f240a53.js"></script>
+
+                                    <p class="modal-par">
+                                        Next, I created a Minimum Spanning Tree out of the graph in order to cut down on
+                                        the amount of edges between rooms. But, I noticed that Pokemon Mystery Dungeon
+                                        seemed to have slightly more than a simple minimum spanning tree, so I added a
+                                        configurable parameter that allowed for a percentage of extra edges to be added
+                                        on top of the MST.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/9bab069372d49e59d3b2db2a7a7dfdda.js"></script>
+                                    <br />
+
+                                    <p class="modal-par">
+                                        Finally, I used the list of edges to create hallways between rooms. Hallways in
+                                        Pokemon Mystery Dungeon always are split into horizontal and vertical sections,
+                                        so I made them randomly start going horizontally or vertically, then switch when
+                                        they reached the correct x or y value.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/88b510e8595e485a2a5d71e7feb619af.js"></script>
+                                    <br />
+
+                                    <p class="modal-par">
+                                        After configuring some of the variables, I was able to find a perfect balance.
+                                        And I used a tileset from the NES version of Final Fantasy 1 and ended up with
+                                        dungeons I would have seen in the Pokemon game!
+                                    </p>
+                                    <br />
+
+
+                                    <div class="row justify-content-center">
+                                        <i>Below are some samples generated from the application. Feel free to download
+                                            it
+                                            from Github and run it yourself!</i>
+                                        <div class="col-md-9 col-lg-6 mb-5">
+                                            <img class="img-fluid" src="assets/img/portfolio/pcg.png" alt="" />
+                                        </div>
+                                        <div class="col-md-9 col-lg-6 mb-5">
+                                            <img class="img-fluid" src="assets/img/portfolio/pcg2.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <img class="img-fluid" src="assets/img/portfolio/pcg3.png" alt="">
+                                    </div>
+                                    <br />
+                                    <br />
+
+                                </div>
+
                                 <button class="btn btn-primary" data-dismiss="modal">
                                     <i class="fas fa-times fa-fw"></i>
                                     Close Window
@@ -645,11 +791,13 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="" />
+                                <img class=" img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="" />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                    neque
                                     assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                    Nam.
                                 </p>
                                 <button class="btn btn-primary" data-dismiss="modal">
                                     <i class="fas fa-times fa-fw"></i>

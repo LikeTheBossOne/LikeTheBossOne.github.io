@@ -135,7 +135,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/mystic.png" alt="" />
+                        <img class="img-fluid" src="assets/vid/ice.gif" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 1-->
@@ -556,11 +556,14 @@
                                     </h3>
                                     <p class="modal-par">
                                         As part of CSC 482 (Advanced Game Projects) at NC State University, I was put on
-                                        a team with six other students to create a 3D multiplayer game using Unity. We
-                                        chose to create a Zombie Apocalypse FPS, and we received great feedback from the
-                                        teaching staff and our sponsors from <a href="https://www.redstorm.com">Red
-                                            Storm Entertainment</a>. Feel free to download the finished playable from <a
+                                        a team with six other students to create a 3D multiplayer game, supporting
+                                        Keyboard and Controller, using Unity. We chose to create a Zombie Apocalypse
+                                        FPS, and we received great feedback from the teaching staff and our sponsors
+                                        from <a href="https://www.redstorm.com">Red Storm Entertainment</a>. Feel free
+                                        to download the finished playable from <a
                                             href="https://drive.google.com/file/d/1hmBX2DCHfvD5F6qxaaoju8QHNnkAQdNZ/view?usp=sharing">Drive</a>
+                                        or view the code on <a
+                                            href="https://github.com/LikeTheBossOne/Scrapyard-Scavenger">Github</a>
                                     </p>
 
                                     <h3>
@@ -665,7 +668,7 @@
                 <div class="modal-body text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
                                     id="portfolioModal4Label">Advent of the Mystics</h2>
@@ -678,23 +681,90 @@
                                 <!-- Portfolio Modal - Text-->
                                 <div style="text-align: left;">
                                     <h3>
-
+                                        Introduction
                                     </h3>
                                     <p class="modal-par">
+                                        This is a personal project I started after graduation from college as a
+                                        prototype for an Multiplayer Open World RPG. I started this project to continue
+                                        learning Unreal Engine and sharpen my skills. It is still in-process but still
+                                        has some cool stuff. Feel free to download the executable from <a
+                                            href="https://drive.google.com/file/d/1fgUglq2pDHThpSY0xvvziWWI31i-OvIl/view?usp=sharing">Drive</a>
+                                        or view the repository on <a
+                                            href="https://github.com/LikeTheBossOne/AdventOfTheMystics">Github</a>
+                                    </p>
+                                    <h3>
+                                        Details
+                                    </h3>
+                                    <p class="modal-par">
+                                        This project is implemented using C++ in combination with Blueprints. I usually
+                                        prototype ideas in a mix of blueprints and C++ and then convert my projects to
+                                        be majority C++ because C++ is more fun, and it is faster.
+                                    </p>
+
+                                    <p class="modal-par">
+                                        In this project, I have made use of Epic's Gameplay Ability System (GAS) which
+                                        they use in Fortnite and Paragon. I use GAS by applying gameplay
+                                        abilities to items that a player can hold. When the player has an item in their
+                                        hand, they can execute the ability tied to that item with their "Use" key.
+                                        Players can switch hotbar items by using the "1", "2", and "3" keys, and access
+                                        their inventory with the "Tab" key. Currently, I have three player abilities
+                                        implemented and one enemy ability.
+                                    </p>
+                                    <ul class="modal-par">
+                                        <li>
+                                            <b>Fire Spell</b>
+                                            <br />
+                                            <img src="assets/vid/fire.gif" style="width: 50%;">
+                                        </li>
+                                        <li>
+                                            <b>Ice Spell</b>
+                                            <br />
+                                            <img src="assets/vid/ice.gif" style="width: 50%;">
+                                        </li>
+                                        <li>
+                                            <b>Sword Attack and Goblin Punch</b>
+                                            <br />
+                                            <img src="assets/vid/sword.gif" style="width: 50%;">
+                                        </li>
+                                    </ul>
+
+                                    <p class="modal-par">
+                                        I have also implemented an enemy AI that will follow the player around and
+                                        attack him when it is close enough.
+                                    </p>
+                                    <img src="assets/img/portfolio/ai.png" style="width: 50%;">
+
+                                    <p class="modal-par">
+                                        This AI spawns from a custom PawnSpawner class that will function as a spawner
+                                        for any Pawn and is configurable through the Unreal Editor.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/5804494d665709ea13b20f9c75ae839b.js"></script>
+                                    <img src="assets/img/portfolio/spawner.png" style="width: 50%;">
+
+                                    <br />
+                                    <br />
+                                    <h3>
+                                        Future
+                                    </h3>
+                                    <p class="modal-par">
+                                        The future is bright for Advent of the Mystics! I am enamored with the idea of
+                                        RPG games with Magic and Sword fights and Lore, but currently the game lacks a
+                                        story and interaction. The next things I will be working on are a quest system
+                                        and interaction with NPCs.
                                     </p>
                                 </div>
 
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
-                            <button class="btn btn-primary" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Portfolio Modal 5-->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog"
@@ -719,6 +789,9 @@
                                 </div>
                                 <!-- Portfolio Modal - Text-->
                                 <div style="text-align: left;">
+                                    <h3>
+                                        Introduction
+                                    </h3>
                                     <p class="modal-par">
                                         In my CSC 484 (Game AI) class at NC State University, I was tasked with creating
                                         a procedurally generated area that consisted of larger areas (rooms) connected
@@ -738,6 +811,9 @@
                                         src="assets/img/portfolio/pmd.png" alt="PMD Image" />
                                     <br />
 
+                                    <h3>
+                                        My Solution
+                                    </h3>
                                     <p class="modal-par">
                                         My solution to the problem starts by creating rooms randomly around the given
                                         area. My algorithm takes a configurable number of attempts to place rooms of

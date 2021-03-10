@@ -87,7 +87,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/triples.png" alt="" />
+                        <img class="img-fluid" src="assets/img/portfolio/scrapyard.png" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 2-->
@@ -151,7 +151,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/game.png" alt="" />
+                        <img class="img-fluid" src="assets/vid/asteroids.gif" alt="" />
                     </div>
                 </div>
             </div>
@@ -314,35 +314,139 @@
                                 </div>
                                 <!-- Portfolio Modal - Text-->
                                 <div style="text-align: left;">
+                                    <h3>
+                                        Introduction
+                                    </h3>
                                     <p class="modal-par">
                                         This was a project I completed as part of CSC 481 (Game Engine Foundations) at
                                         NC State University. In this project, I created an extensible 2D Game Engine
                                         complete with scripting with JavaScript, Networking with ZMQ, a custom replay
-                                        system, and graphics with SFML.
+                                        system, and graphics with SFML. For each iteration of the project, I received
+                                        the highest grade possible by completing the Graduate Level Objectives along
+                                        with the Undergrad objectives. For the final iteration of the project, I had to
+                                        prove the extensibility of my engine by implementing a second game with it. I
+                                        chose to implement the classic game "Asteroids".
+                                        <br />
+                                        <img style="width: 50%;" src="assets/vid/asteroids.gif" alt="" />
                                     </p>
                                     <br />
 
                                     <h3>
-                                        Architecture
+                                        Downloads + Instructions:
                                     </h3>
                                     <p class="modal-par">
-
+                                        You can download the release version of Asteroids from <a
+                                            href="https://drive.google.com/file/d/1Q1w0VF0jCARuzXYhbqzdbAoIGogxE5bR/view?usp=sharing">Drive</a>.
+                                        <br />
+                                        You can download the release version of the Platformer from <a
+                                            href="https://drive.google.com/file/d/18Uw_AwsW6U2ecQNOEQpBMC9DDnubW6Km/view?usp=sharing">Drive</a>.
+                                        <br />
+                                        You can view the Asteroids source code on <a
+                                            href="https://github.com/LikeTheBossOne/Asteroids-Game">Github</a>.
+                                        <br />
+                                        You can view the Platformer source code on <a
+                                            href="https://github.com/LikeTheBossOne/2DGameEngine">Github</a>.
+                                        <br />
+                                        To start the games, you will need to first run the EngineServer, and then the
+                                        Client. Both games are networked and fully LAN multiplayer!
+                                        <br />
+                                        I suggest playing the Asteroids game and looking at its code because it is more
+                                        complete and actually a full game!
                                     </p>
+
+                                    <h3>
+                                        Game Object Model Architecture
+                                    </h3>
+                                    <p class="modal-par">
+                                        I chose to implement a Hybrid Component Model that combines the Rigid Component
+                                        Model which requires specifying components on the GameObject (Entity) class and
+                                        the Generic
+                                        Component Model which lets GameObjects have a list of components that
+                                        inherit from a GenericComponent base class. This allows my GameObjects to have
+                                        easy references to components that they will always need (Like a Transform)
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/b2247d1e939ab9a564b3f92e5b9d0b94.js"></script>
                                     <br />
 
                                     <h3>
                                         Networking
                                     </h3>
+                                    <p class="modal-par">
+                                        For networking, I used ZeroMQ which is a C Library for networking. I decided to
+                                        implement a dummy-client solution for networking that required my client to only
+                                        gather input and send the input to the server, then render the state of the game
+                                        based on messages from the server. I used a combination of a REQ/REP socket and
+                                        a PUB/SUB socket to allow two-way communication between multiple clients and the
+                                        server.
+                                    </p>
+                                    <h4>
+                                        Client
+                                    </h4>
+                                    <p class="modal-par">
+                                        In this networking architecture, the client has two threads. One for
+                                        rendering and receiving input, and the other for receiving messages from the
+                                        Server. When the client receives a message, it updates its internal GameObject
+                                        state which basically consists of dummy objects that only have a texture, a
+                                        transform, and a shape.
+                                    </p>
+                                    <h4>
+                                        Server
+                                    </h4>
+                                    <p class="modal-par">
+                                        The server is what does all of the work in this architecture. It has two threads
+                                        as well (but it could be expanded to a pool of multiple for dealing with
+                                        multiple clients). The servers worker thread updates the state of the game each
+                                        frame and publishes the updated state in JSON format to all listening clients at
+                                        the end of
+                                        each frame. This state contains the positions of every object, their shapes, and
+                                        a reference to a texture. The server's other thread is always waiting for client
+                                        messages and raises an Event on the EventManager that the InputManager
+                                        subscribes to for handling the input.
+                                    </p>
+                                    <br />
+                                    <p class="modal-par">
+                                        I am linking the client and server code because they are too long to put
+                                        on this page. But you should check it out! <a
+                                            href="https://github.com/LikeTheBossOne/2DGameEngine/blob/main/EngineClient/main.cpp">Client</a>
+                                        <a
+                                            href="https://github.com/LikeTheBossOne/2DGameEngine/blob/main/EngineServer/main.cpp">Server</a>
+                                    </p>
                                     <br />
 
                                     <h3>
                                         Scripting
                                     </h3>
+                                    <p class="modal-par">
+                                        I implemented a ScriptManager that uses the Dukglue library to pass memory
+                                        between a C++ application and a JavaScript script. This allows me to call into
+                                        JavaScript functions from C++ code so that I can implement functionality in
+                                        easier-to-write JavaScript code. The infrastructure for my engine isn't
+                                        massively built out in JavaScript yet, so there aren't enough supported types to
+                                        do heavy lifting, but it serves as proof that I could move more functionality to
+                                        JS.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/fc3d2502ab5932e2f3aadb8b5d10f113.js"></script>
                                     <br />
 
                                     <h3>
-                                        Replay System
+                                        Replay & Timeline System
                                     </h3>
+                                    <p class="modal-par">
+                                        I implemented replays by simply recording starting state of the world, then the
+                                        current user inputs and deltaTime at the beginning of each tick in a
+                                        ReplayTick object which is added to a queue. Then playback is implemented by
+                                        consuming each ReplayTick during each regular game tick. When
+                                        this happens, the server runs normally and recreates all the Events that
+                                        happened during that time organically. Thus, instead of having to save every
+                                        single event that happens, I only have to save the inputs, and all the events
+                                        will be reproduced. This saved me a significant amount of space as saving only
+                                        inputs and deltaTime takes only 8 bytes per tick, whilst saving the events on
+                                        each tick will likely take at least 40 bytes per event.
+                                    </p>
+                                    <script
+                                        src="https://gist.github.com/LikeTheBossOne/7b1d4d68a73c17f4d27da7886152d59d.js"></script>
                                 </div>
                                 <br />
                                 <button class="btn btn-primary" data-dismiss="modal">

@@ -180,7 +180,6 @@
                     <ul class="lead">
                         <li>Unreal Engine</li>
                         <li>Unity</li>
-                        <li>SFML</li>
                         <li>React</li>
                     </ul>
                 </div>
@@ -532,7 +531,7 @@
                 <div class="modal-body text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
                                     id="portfolioModal3Label">Scrapyard Scavenger</h2>
@@ -542,62 +541,118 @@
                                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <!-- Portfolio Modal - Text-->
-                                <div style="text-align: left;"></div>
-                                <p class="modal-par">
-
-                                </p>
-                                <ul class="modal-par">
-                                    <li>
-                                        Character Movement/Physics
-                                    </li>
-                                    <li>
-                                        Setup and Ensured Networking
-                                    </li>
-                                    <li>
-                                        Team Lead: Reviewed all PRs
-                                    </li>
-                                    <li>
-                                        Extensible Notification System
-                                    </li>
-                                    <li>
-                                        Buyable Debris/Objects System
-                                    </li>
-                                    <li>
-                                        Collectable Resources & Resource Volume Zones
-                                    </li>
-                                    <li>
-                                        Economy/XP
-                                    </li>
-                                    <li>
-                                        FaceOff Gamemode
-                                    </li>
-                                    <li>
-                                        Inventory & Equipment Managers
-                                    </li>
-                                    <li>
-                                        Gun Shooting, Reloading, Switching
-                                    </li>
-                                    <li>
-                                        Persistence between scenes, and scene switching
-                                    </li>
-                                </ul>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/cnX-EOUraUc"
+                                <i> This is our trailer for the NCSU 2020 Games Showcase. Please excuse the audio
+                                    problems</i>
+                                <iframe width="760" height="440" src="https://www.youtube.com/embed/cnX-EOUraUc"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
+                                <br />
+                                <br />
+                                <!-- Portfolio Modal - Text-->
+                                <div style="text-align: left;">
+                                    <h3>
+                                        Introduction
+                                    </h3>
+                                    <p class="modal-par">
+                                        As part of CSC 482 (Advanced Game Projects) at NC State University, I was put on
+                                        a team with six other students to create a 3D multiplayer game using Unity. We
+                                        chose to create a Zombie Apocalypse FPS, and we received great feedback from the
+                                        teaching staff and our sponsors from <a href="https://www.redstorm.com">Red
+                                            Storm Entertainment</a>. Feel free to download the finished playable from <a
+                                            href="https://drive.google.com/file/d/1hmBX2DCHfvD5F6qxaaoju8QHNnkAQdNZ/view?usp=sharing">Drive</a>
+                                    </p>
+
+                                    <h3>
+                                        Accomplishments
+                                    </h3>
+                                    <ul class="modal-par">
+                                        <li>
+                                            <b>Team Lead</b>:
+                                            In my role as Team Lead, I completed code review and QA on nearly every pull
+                                            request submitted by my teammates. I was also the point of contact with our
+                                            sponsors at Red Storm.
+                                        </li>
+                                        <li>
+                                            <b>Character Movement</b>:
+                                            In the first code commit to the repository, I implemented the groundwork for
+                                            the Character Movement and Physics that the game would be built on for the
+                                            remainder of the project.
+                                        </li>
+                                        <li>
+                                            <b>Setup Networking and ensured Multiplayer-first approach</b>:
+                                            I was in charge of researching and implementing a networking solution for my
+                                            team. I chose to use Photon PUN instead of the Unity solution because the
+                                            Unity solution does not provide the responsive fidelity necessary for an FPS
+                                            Game. I created the initial prototypes for networked characters and educated
+                                            my team on how to implement networking and best practices.
+                                        </li>
+                                        <li>
+                                            <b>Extensible Notification System</b>:
+                                            Partway through the project, I identified the need for a notification system
+                                            that would alert the players of things that were happening. So I implemented
+                                            an extensible system that allowed Notifiers to register their notification
+                                            stream and render notification events as they pleased, ensuring seperation
+                                            of concerns between individual notifiers and the notifications themselves.
+                                            My team was very excited about this addition, and it moved cleanly through
+                                            code review.
+                                            <script
+                                                src="https://gist.github.com/LikeTheBossOne/c03449c7a100ab9e1ee27f3fce1b3652.js"></script>
+                                            <img src="assets/img/portfolio/notif.png">
+                                        </li>
+                                        <li>
+                                            <b>Buyable Debris System</b>:
+                                            In order to make sure it wasn't too easy for players to traverse the whole
+                                            map, and to add a sense of acheivement to the game, I implemented a buyable
+                                            debris system that made players spend experience to open up different parts
+                                            of the map. This system included linked debris, where buying removal of one
+                                            debris would remove another debris that allowed access to the same zone.
+                                            <br />
+                                            <img src="assets/img/portfolio/debris.png">
+                                        </li>
+                                        <li>
+                                            <b>Collectable Resources & Resource Volume Zones</b>:
+                                            To go along with the sense of acheivement provided by unlockable zones, I
+                                            implemented a collectable resource system. This system used a custom
+                                            spawning volume to randomly spawn resources in each zone and
+                                            allowed the player to pick them up in order to craft new weapons and items.
+                                            <br />
+                                            <img src="assets/img/portfolio/resource.png">
+                                        </li>
+                                        <li>
+                                            <b>FaceOff Gamemode</b>:
+                                            One of my biggest acheivements was the implementation of a second game mode
+                                            that was PvP focused. This gamemode operates like a tactical shooter (CS:GO)
+                                            and pits players against each other instead of against enemies. I spent a
+                                            significant amount of time a week before the final presentation to implement
+                                            this gamemode and surprised my team with it with ample time for code review
+                                            and QA. This gamemode was a hit within my team and with the other groups
+                                            that tested our game.
+                                        </li>
+                                        <li>
+                                            Inventory & Equipment Managers
+                                        </li>
+                                        <li>
+                                            Economy/XP
+                                        </li>
+                                        <li>
+                                            Persistence between scenes
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br />
+                                <br />
+                                <!-- TODO: Stop video on close-->
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
-                            <!-- TODO: Stop video on close-->
-                            <button class="btn btn-primary" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Portfolio Modal 4-->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
@@ -621,11 +676,14 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <!-- Portfolio Modal - Text-->
-                                <div style="text-align: left;"></div>
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
+                                <div style="text-align: left;">
+                                    <h3>
+
+                                    </h3>
+                                    <p class="modal-par">
+                                    </p>
+                                </div>
+
                             </div>
                             <button class="btn btn-primary" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>

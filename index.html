@@ -103,7 +103,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/bosscraft.png" alt="" />
+                        <img class="img-fluid" src="assets/img/portfolio/bosscraft-new-round.png" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 3-->
@@ -1005,9 +1005,9 @@
                                         Introduction
                                     </h3>
                                     <p class="modal-par">
-                                        BossCraft is a Voxel game based off of Minecraft. I created this project to work
+                                        BossCraft is a multiplayer Voxel game based off of Minecraft. I created this project to work
                                         on my skills in multithreaded C++ and rendering. This project started in 2021,
-                                        and has undergone a full rewrite since then in order to use a complete
+                                        and has undergone several rewrites since then in order to use a complete
                                         Entity-Component-Systems architecture with <a
                                             href="https://github.com/skypjack/entt">EnTT</a>, and to support a simple
                                         component-based networking structure.
@@ -1020,7 +1020,7 @@
                                     <i>Example world from a client's view</i>
                                     <br />
                                     <img style="width: 75%" class="img-fluid rounded mb-5"
-                                        src="assets/img/portfolio/bosscraft.png" alt="PMD Image" />
+                                        src="assets/img/portfolio/bosscraft-new.png" alt="PMD Image" />
                                     <br />
 
                                     <h3>
@@ -1028,7 +1028,7 @@
                                     </h3>
                                     <p class="modal-par">
                                         To represent and render the game world, I split up the world into groups of
-                                        blocks called <i>Chunks</i>. These chunks are 16x64x16 and serve to limit the
+                                        blocks called <i>Chunks</i>. These chunks are 16x16x16 and serve to limit the
                                         amount of work that has to be done when changes occur in the world. When a block
                                         updates inside one of the chunks, I only have to re-generate the mesh for that
                                         chunk and potentially neighboring chunks.
@@ -1077,15 +1077,25 @@
                                         Networking
                                     </h3>
                                     <p class="modal-par">
-                                        Networking is one of the more recent additions to BossCraft. To add networking
+                                        Networking is one of core components of BossCraft. To add networking
                                         capabilities to the game, I used the <a href="http://www.raknet.net/">Raknet</a>
                                         library. This took care of all of the low level networking work so I could focus
                                         on just the data I send between the server and multiple clients.
                                         <br />
                                         <br />
-                                        The biggest piece of data I send from the server to the client is chunk data. To
-                                        do this, the client requests chunks that they don't have or need to be updated,
+                                        I could spend days talking about the intricacies of network architecture as it applies
+                                        to player's perception of the game state in BossCraft, but instead I will give short description
+                                        of the main tactics used to minimize latency and maximize player and world responsiveness.
+                                        The first tactic I use is client interpolation for entities in the world to ensure smooth
+                                        transition between past and current game states. I also use input buffering to allow clients
+                                        to adapt to changes dictated by the authoritative server.
+                                        <br />
+                                        <br />
+                                        One piece of data I send from the server to the client is chunk data. To
+                                        do this, the client may request chunks that they don't have or need to be updated,
                                         and the server fulfills those requests and sends those chunks to the client.
+                                        The server may also send chunks to the client automatically if another player makes an update 
+                                        to the world nearby.
                                         Chunks are compressed using Run Length Encoding before being sent to minimize
                                         the size of network messages.
                                         <br />
@@ -1112,8 +1122,7 @@
                                         and rendering, so that my game approaches the visual level of Minecraft.
                                         Eventually,
                                         I want to get this game to a place where I can log on with my friends and get
-                                        their
-                                        feedback over long play sessions.
+                                        their feedback over long play sessions.
                                     </p>
                                 </div>
 

@@ -9995,6 +9995,20 @@ h3 {
   }
 }
 
+.page-section-short {
+  padding: 6rem 0 0 0;
+}
+.page-section-short .page-section-short-heading {
+  font-size: 2.25rem;
+  line-height: 2rem;
+}
+@media (min-width: 992px) {
+  .page-section-short .page-section-short-heading {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+}
+
 .divider-custom {
   margin: 1.25rem 0 1.5rem;
   width: 100%;

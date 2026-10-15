@@ -26,7 +26,7 @@ The site deliberately keeps Advent of the Mystics, Procedural Generation, and EC
 
 The copy distinguishes the existing RPG foundation from the planned AI director, interpreted mechanics, and playable quests. It is based on the mod's README, architecture notes, and roadmap as reviewed on October 15, 2026. Keep that distinction updated as features become playable. The repository is private, so there is no public source link.
 
-When screenshots are ready, add them under `assets/img/portfolio/ai-minecraft/` and insert a figure inside `#ai-minecraft`, after `.ai-overview`. Supply descriptive alt text, the image's intrinsic `width` and `height`, and `loading="lazy"`. Use actual captured gameplay and identify any concept imagery explicitly.
+The captured gameplay screenshot at `assets/img/portfolio/ai-minecraft/gameplay.png` appears in the home page's featured project and in a figure inside `#ai-minecraft`'s `.ai-overview`. The project section places the introduction on the left and the screenshot on the right, capped at 560px wide, with the planned AI features below. The introduction and image stack on screens up to 800px wide. Both image placements show the full screenshot at its original aspect ratio. Additional screenshots should use descriptive alt text, intrinsic `width` and `height`, and `loading="lazy"` outside the hero. Use actual captured gameplay and identify any concept imagery explicitly.
 
 ## Review checklist
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A voxel engine built from scratch to explore world generation, efficient rendering, and responsive multiplayer. Project by Brendan Boss.">
+  <meta name="theme-color" content="#111816">
+  <meta property="og:title" content="BossCraft | Brendan Boss">
+  <meta property="og:description" content="A voxel engine built from scratch to explore world generation, efficient rendering, and responsive multiplayer.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://likethebossone.github.io/projects/bosscraft.html">
+  <meta property="og:image" content="https://likethebossone.github.io/assets/img/portfolio/bosscraft-new.png">
+  <meta property="og:image:alt" content="A voxel sunset over grassy terrain with a zombie in BossCraft.">
+  <link rel="canonical" href="https://likethebossone.github.io/projects/bosscraft.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/scripts.js" defer></script>
+  <title>BossCraft | Brendan Boss</title>
+</head>
+<body id="page-top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav-layout">
+    <a class="brand" href="../index.html" aria-label="Brendan Boss, home"><span class="brand-mark" aria-hidden="true">b.</span>Brendan Boss</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="../index.html#professional">Experience</a><a href="../index.html#portfolio">Projects</a><a href="../index.html#about">About</a><a class="nav-contact" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <header class="case-header container">
+      <a class="back-link" href="../index.html#portfolio">← All projects</a>
+      <h1>BossCraft</h1>
+      <p class="case-lead">A voxel engine built from scratch to explore world generation, efficient rendering, and responsive multiplayer.</p>
+      <p class="project-meta">Custom engine · Multiplayer · Personal project</p>
+      <dl class="case-meta"><div><dt>My role</dt><dd>Engine & gameplay development</dd></div><div><dt>Built with</dt><dd>C++ · OpenGL · RakNet · ECS</dd></div></dl>
+      <a class="button button-primary" href="#engineering">Explore the engineering <span aria-hidden="true">↓</span></a>
+    </header>
+    <figure class="case-cover container"><img src="../assets/img/portfolio/bosscraft-new.png" width="1914" height="1049" alt="A voxel sunset over grassy terrain with a zombie in BossCraft." fetchpriority="high"><figcaption>A client’s view of the world in BossCraft.</figcaption></figure>
+    <div class="case-content container" id="engineering">
+      <section><h2>A world built on systems</h2><p>BossCraft brings together the parts of engine development I enjoy most: generating a world, getting it onto the screen efficiently, and keeping it responsive across multiple players. I built a component-based networking structure around an entity-component-system architecture.</p></section>
+<section><h2>Meshing & rendering</h2><p>The world is divided into 16 × 16 × 16 block chunks. When a block changes, only its chunk and any affected neighboring chunks need their meshes rebuilt.</p><p>Mesh generation skips faces hidden by neighboring opaque blocks. Triangle data is packed into integers before it reaches the GPU, where the shader unpacks it for rendering. Both choices reduce the work needed to represent a dense voxel world.</p><p><a href="https://gist.github.com/LikeTheBossOne/7d8fec139157d810a2591b7d354a1443">View the mesh-packing code ↗</a></p></section>
+<section><h2>Keeping the render thread moving</h2><p>Chunk generation and meshing can be expensive. I built a job system that queues work on background threads, then places completed results into a thread-safe queue. The main thread picks up those results for rendering.</p><p>This separates world-building work from frame rendering, so loading a chunk does not require doing all of its computation on the render thread.</p><p><a href="https://gist.github.com/LikeTheBossOne/c4b7bf60acfb7602f047de3cc89d6272">View the job system ↗</a></p></section>
+<section><h2>Making multiplayer feel responsive</h2><p>RakNet handles low-level networking, while BossCraft’s own systems decide which state to send between the authoritative server and its clients.</p><ul><li><strong>Client interpolation</strong> smooths entity movement between received states.</li><li><strong>Input buffering</strong> helps clients adapt to state changes dictated by the server.</li><li><strong>Chunk synchronization</strong> supports client requests and server-driven updates when another player changes the world.</li><li><strong>Run-length encoding</strong> compresses chunk data before transmission.</li><li><strong>A thread-safe outgoing queue</strong> coordinates network messages produced by background work.</li></ul><p><a href="https://gist.github.com/LikeTheBossOne/54dff3f90faab173cd3bf505792ee01b">View the networking example ↗</a></p></section>
+    </div>
+    <div class="case-next container"><div><h2>Mystic Engine</h2></div><a class="button" href="mystic.html">Next project <span aria-hidden="true">→</span></a></div>
+  </main>
+  <footer class="site-footer container"><span>© <span data-year>2026</span> Brendan Boss</span><div><a href="https://github.com/LikeTheBossOne">GitHub</a><a href="https://www.linkedin.com/in/brendanboss/">LinkedIn</a><a href="../index.html#portfolio">All projects ↑</a></div></footer>
+</body>
+</html>

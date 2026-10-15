@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A custom game engine and editor exploring how strong tooling can make iteration faster. Project by Brendan Boss.">
+  <meta name="theme-color" content="#111816">
+  <meta property="og:title" content="Mystic Engine | Brendan Boss">
+  <meta property="og:description" content="A custom game engine and editor exploring how strong tooling can make iteration faster.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://likethebossone.github.io/projects/mystic.html">
+  <meta property="og:image" content="https://likethebossone.github.io/assets/img/portfolio/mysticEngine.png">
+  <meta property="og:image:alt" content="Mystic Engine's scene editor displaying a crate and its transform component.">
+  <link rel="canonical" href="https://likethebossone.github.io/projects/mystic.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/scripts.js" defer></script>
+  <title>Mystic Engine | Brendan Boss</title>
+</head>
+<body id="page-top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav-layout">
+    <a class="brand" href="../index.html" aria-label="Brendan Boss, home"><span class="brand-mark" aria-hidden="true">b.</span>Brendan Boss</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="../index.html#professional">Experience</a><a href="../index.html#portfolio">Projects</a><a href="../index.html#about">About</a><a class="nav-contact" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <header class="case-header container">
+      <a class="back-link" href="../index.html#portfolio">← All projects</a>
+      <h1>Mystic Engine</h1>
+      <p class="case-lead">A custom game engine and editor exploring how strong tooling can make iteration faster.</p>
+      <p class="project-meta">Engine architecture · Developer tools · Personal project</p>
+      <dl class="case-meta"><div><dt>My role</dt><dd>Engine & editor development</dd></div><div><dt>Built with</dt><dd>C++ · OpenGL · EnTT · ImGui</dd></div></dl>
+      <a class="button button-primary" href="https://github.com/LikeTheBossOne/Mystic">View source on GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <figure class="case-cover container"><img src="../assets/img/portfolio/mysticEngine.png" width="1018" height="711" alt="Mystic Engine's scene editor displaying a crate and its transform component." fetchpriority="high"><figcaption>The custom editor, with component properties alongside the scene viewport.</figcaption></figure>
+    <div class="case-content container">
+      <section><h2>An engine for experimenting</h2><p>Mystic is my playground for engine architecture and developer tools. It combines an entity-component architecture with an editor that lets creators inspect scenes and modify built-in and custom components.</p><p>The project focuses on the connection between runtime systems and the tools used to author them: how data is represented, how custom types become editable, and how quickly game code can change.</p></section>
+<section><h2>Hot-reloadable game code</h2><p>I wanted game code to run inside the editor and remain editable without restarting the whole engine. Mystic loads that code from a separate GameCode DLL.</p><p>The editor’s hot-reload action rebuilds the module and reinjects it into the running engine. This makes the edit-and-test loop part of the editor workflow.</p><p><a href="https://gist.github.com/LikeTheBossOne/143ee02783cd0c6fed76ca19caf2c010">View the hot-reload example ↗</a></p></section>
+<section><h2>Reflection that connects code to tools</h2><p>The editor needs information about custom component types that live inside the reloadable module. I built the Mystic Header Tool to parse scripts, create a type dictionary, and generate the code needed to expose those types.</p><p>That information supports both scene serialization and editing custom component properties in the UI.</p><p><a href="https://gist.github.com/LikeTheBossOne/1b7980df6487bc88160e0760380b47cd">View generated editor code ↗</a></p></section>
+<section><h2>A component-driven editor</h2><p>The ImGui interface pairs a scene view with an entity and component editor. Creators can add and modify components, then save the scene’s serialized entity data as part of a Mystic project.</p><figure><img src="../assets/img/portfolio/editor.png" width="1199" height="872" loading="lazy" alt="The Mystic editor with a scene viewport and entity component controls."><figcaption>The editor brings scene authoring and component inspection into the same workspace.</figcaption></figure></section>
+    </div>
+    <div class="case-next container"><div><h2>Scrapyard Scavenger</h2></div><a class="button" href="scrapyard-scavenger.html">Next project <span aria-hidden="true">→</span></a></div>
+  </main>
+  <footer class="site-footer container"><span>© <span data-year>2026</span> Brendan Boss</span><div><a href="https://github.com/LikeTheBossOne">GitHub</a><a href="https://www.linkedin.com/in/brendanboss/">LinkedIn</a><a href="../index.html#portfolio">All projects ↑</a></div></footer>
+</body>
+</html>

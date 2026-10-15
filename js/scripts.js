@@ -1,69 +1,58 @@
-/*!
-    * Start Bootstrap - Freelancer v6.0.5 (https://startbootstrap.com/theme/freelancer)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-    */
-    (function($) {
-    "use strict"; // Start of use strict
-  
-    // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: (target.offset().top - 71)
-          }, 1000, "easeInOutExpo");
-          return false;
-        }
-      }
-    });
-  
-    // Scroll to top button appear
-    $(document).scroll(function() {
-      var scrollDistance = $(this).scrollTop();
-      if (scrollDistance > 100) {
-        $('.scroll-to-top').fadeIn();
-      } else {
-        $('.scroll-to-top').fadeOut();
-      }
-    });
-  
-    // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
-      $('.navbar-collapse').collapse('hide');
-    });
-  
-    // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
-      target: '#mainNav',
-      offset: 80
-    });
-  
-    // Collapse Navbar
-    var navbarCollapse = function() {
-      if ($("#mainNav").offset().top > 100) {
-        $("#mainNav").addClass("navbar-shrink");
-      } else {
-        $("#mainNav").removeClass("navbar-shrink");
-      }
+// All project content and native disclosures remain available without JavaScript.
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#site-nav');
+  if (toggle && nav) {
+    document.documentElement.classList.add('js-enabled');
+    toggle.hidden = false;
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
     };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
-  
-    // Floating label headings for the contact form
-    $(function() {
-      $("body").on("input propertychange", ".floating-label-form-group", function(e) {
-        $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-      }).on("focus", ".floating-label-form-group", function() {
-        $(this).addClass("floating-label-form-group-with-focus");
-      }).on("blur", ".floating-label-form-group", function() {
-        $(this).removeClass("floating-label-form-group-with-focus");
-      });
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
     });
-  
-  })(jQuery); // End of use strict
-  
+    nav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        // Don't leave keyboard focus inside a menu that is about to be hidden.
+        if (getComputedStyle(toggle).display !== 'none') toggle.focus();
+        closeMenu();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 801px)').addEventListener('change', closeMenu);
+  }
+  const copyButton = document.querySelector('.copy-email');
+  const email = document.querySelector('#contact-email');
+  const copyStatus = document.querySelector('.copy-status');
+  if (copyButton && email && copyStatus) {
+    copyButton.hidden = false;
+    copyButton.addEventListener('click', async () => {
+      copyButton.disabled = true;
+      try {
+        await navigator.clipboard.writeText(email.textContent.trim());
+        copyStatus.textContent = 'Email address copied.';
+      } catch {
+        // Keep the address usable even if clipboard permission is unavailable.
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(email);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = 'Address selected. Use your device’s Copy command.';
+      } finally {
+        copyButton.disabled = false;
+      }
+    });
+  }
+  document.querySelectorAll('[data-year]').forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+})();

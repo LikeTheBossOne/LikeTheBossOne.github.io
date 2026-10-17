@@ -14,7 +14,7 @@ Open `http://127.0.0.1:49989`. Changes appear after refreshing the browser. Stop
 
 ## Where to edit
 
-- `index.html`: introduction, Warzone contributions and credits, GenAI Minecraft RPG, selected projects, archived experiments, and contact details.
+- `index.html`: introduction, Warzone contributions and credits, GenAI Dungeon Crawler, selected projects, archived experiments, and contact details.
 - `projects/`: standalone writeups for BossCraft, Mystic Engine, and Scrapyard Scavenger.
 - `css/styles.css`: shared styles and responsive layouts.
 - `js/scripts.js`: responsive navigation, email copying, and the footer year. Project content, contact links, and native expandable sections remain usable without JavaScript.
@@ -22,11 +22,11 @@ Open `http://127.0.0.1:49989`. Changes appear after refreshing the browser. Stop
 
 The site deliberately keeps Advent of the Mystics, Procedural Generation, and ECS Library in a collapsed archive instead of the main project grid. BossCraft's repository is private, so its writeup links only to the public code examples.
 
-## GenAI Minecraft RPG content
+## GenAI Dungeon Crawler content
 
-The copy centers the Living AI Director: a persistent, opinionated host whose memory and relationship with the player shape the experience. It describes implemented identity, campaign memory, floor planning, and limited live encounter changes in present tense. Personal quests, a broader creative voice, personalized loot, discretionary achievements, and drama incentives are presented as project goals. This framing follows the mod's source and revised roadmap as reviewed on October 16, 2026. Describe what the project does and aims to do, without a changelog or recent-advancements framing. The repository is private, so there is no public source link.
+The copy centers the Living AI Director: a persistent, opinionated host whose memory and relationship with the player shape the experience. It describes implemented identity, campaign memory, floor planning, and limited live encounter changes in present tense. Custom achievement writing is illustrated with the user-provided Spark Then Sweep screenshot. Personal quests, personalized loot, broader discretionary achievement behavior, and drama incentives remain project goals. This framing follows the mod's source and revised roadmap as reviewed on October 16, 2026. Describe what the project does and aims to do, without a changelog or recent-advancements framing. The repository is private, so there is no public source link.
 
-The captured gameplay screenshot at `assets/img/portfolio/ai-minecraft/gameplay.png` appears in the home page's featured project and in a figure inside `#ai-minecraft`'s `.ai-overview`. The project section places the introduction on the left and the screenshot on the right, capped at 560px wide, with four Director goal areas below in a two-column grid. The introduction and image stack on screens up to 800px wide, where the goal areas also become a single column. Both image placements show the full screenshot at its original aspect ratio. Additional screenshots should use descriptive alt text, intrinsic `width` and `height`, and `loading="lazy"` outside the hero. Use actual captured gameplay and identify any concept imagery explicitly.
+The captured gameplay screenshot at `assets/img/portfolio/ai-minecraft/gameplay.png` appears in the home page's featured project and in a figure inside `#ai-minecraft`'s `.ai-overview`. The project section places the introduction on the left and the screenshot on the right, capped at 560px wide, with a custom achievement example with text and image side by side (stacked on mobile) and five Director goal areas below in a two-column grid. The introduction and image stack on screens up to 800px wide, where the goal areas also become a single column. Both image placements show the full screenshot at its original aspect ratio. Additional screenshots should use descriptive alt text, intrinsic `width` and `height`, and `loading="lazy"` outside the hero. Use actual captured gameplay and identify any concept imagery explicitly.
 
 ## Review checklist
 

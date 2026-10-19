@@ -73,7 +73,7 @@
           <div class="ai-overview">
             <div class="ai-copy">
               <h3 id="ai-title">GenAI Dungeon Crawler</h3>
-              <p class="project-meta">Minecraft Neoforge mod</p>
+              <p class="project-meta">Minecraft NeoForge mod</p>
               <p class="ai-tagline">A dungeon with<br>a mind of its own.</p>
               <div class="ai-description"><p>A single-player dungeon RPG inside Minecraft, inspired by Matt Dinniman’s LitRPG series <a href="https://mattdinniman.com/books/dungeon-crawler-carl/"><cite>Dungeon Crawler Carl</cite></a>. Survival, spectacle, and your relationship with the dungeon’s AI host shape the experience.</p><p>The Living AI Director is an opinionated host with a persistent personality and campaign memory. It uses generative AI to shape each floor’s story, react to your choices, and adapt encounters you have yet to discover.</p></div>
             </div>
@@ -83,7 +83,13 @@
             </figure>
           </div>
           <section class="ai-achievements ai-plans" aria-labelledby="ai-achievements-title">
-            <div class="ai-plans-title ai-runtime-title"><h4 id="ai-achievements-title">Runtime generated Achievements and Quests</h4></div>
+            <div class="ai-plans-title ai-runtime-title">
+              <h4 id="ai-achievements-title">Runtime AI: shaping the dungeon as you play</h4>
+              <div class="ai-description ai-runtime-intro">
+                <p>The System AI listens to a wide range of game events and uses that context to decide when to act, what to say, and how to shape the unfolding run. Those events connect the host’s decisions to what is actually happening in the game, informing its commentary, generated achievements, and quests.</p>
+                <p>I chose Minecraft with NeoForge for its broad event bus: native hooks into what is happening across the game. Subscribing to those events gives the System AI visibility into the player’s actions and the surrounding world, providing the foundation for a host that responds as the game unfolds.</p>
+              </div>
+            </div>
             <div class="ai-achievement-copy">
             <h5>Achievements with attitude</h5>
             <div class="ai-description"><p>The System AI turns moments from your run into custom achievements, writing names and commentary in its own distinctive voice. It celebrates what you did with theatrical flair, backhanded praise, and a healthy dose of sarcasm.</p></div>
@@ -99,6 +105,25 @@
               <a href="assets/img/portfolio/ai-minecraft/fare-auditor-quest.png" aria-label="View the Fare Auditor quest screenshot at full size"><img src="assets/img/portfolio/ai-minecraft/fare-auditor-quest.png" width="1280" height="720" alt="System AI quest titled Knock First, Regret Later: The Fare Auditor Wants a Word, with theatrical narration, an objective to defeat the Fare Auditor Borough Boss, and a Bronze Quest Box reward." loading="lazy"></a>
               <figcaption>“Knock First, Regret Later” — a dynamically created quest from the System AI.</figcaption>
             </figure>
+            </div>
+          </section>
+          <section class="ai-assets ai-plans" aria-labelledby="ai-assets-title">
+            <div class="ai-assets-grid">
+              <div class="ai-asset-copy">
+                <div class="ai-plans-title"><h4 id="ai-assets-title">Custom asset generation</h4></div>
+                <h5>Meet the Scraptooth Goblin</h5>
+                <div class="ai-description">
+                  <p>An early-floor enemy, built entirely with AI. Its model, textures, rigging, and animations are all generated as part of our custom asset pipeline.</p>
+                  <p>That pipeline runs from Blockbench through GeckoLib into Minecraft, bringing custom creatures into the dungeon. Here, the Scraptooth Goblin shows off its generated walk cycle.</p>
+                </div>
+              </div>
+              <figure class="ai-asset-demo">
+                <video controls autoplay muted loop playsinline preload="metadata" poster="assets/img/portfolio/ai-minecraft/scraptooth-goblin.png" aria-label="Scraptooth Goblin walk animation">
+                  <source src="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4" type="video/mp4">
+                  <a href="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4">Watch the Scraptooth Goblin walk animation.</a>
+                </video>
+                <figcaption>Scraptooth Goblin · Walk cycle</figcaption>
+              </figure>
             </div>
           </section>
           <div class="ai-plans"><div class="ai-plans-title"><h4>Evolving Unhinged AI</h4><p>An opinionated host whose personality grows more extreme as you descend through the dungeon.</p></div><div class="ai-plan-grid">

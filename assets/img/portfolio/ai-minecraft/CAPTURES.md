@@ -38,6 +38,6 @@ longer the current feature examples. The latter depicts an authored boss objecti
 with AI presentation, not a generated objective. Other existing gameplay and
 Scraptooth Goblin media retain their previous provenance.
 
-The main `gameplay.png` image was replaced on October 21, 2026, with a screenshot
+The main `gameplay-8ce22878163d.png` image was replaced on October 21, 2026, with a screenshot
 supplied by the portfolio owner, showing street combat against Scraptooth goblins.
 The supplied image is used without image edits.

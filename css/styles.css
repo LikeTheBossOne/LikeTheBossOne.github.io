@@ -102,29 +102,33 @@ h1 { font-size: clamp(3.4rem, 6.4vw, 6.4rem); line-height: .99; margin-top: 27px
 .ai-gameplay img { border: 1px solid #41543c; border-radius: 3px; }
 .ai-plans { margin-top: 40px; border-top: 1px solid #41543c; padding-top: 29px; }
 .ai-plans-title h4 { font-size: 1.5rem; }
+.ai-story h4 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1.2; max-width: 30ch; }
+.ai-story-copy { max-width: 78ch; }
+.ai-story-wide { max-width: 90ch; }
+.ai-story .ai-description { margin-top: 20px; }
+.ai-story-media { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: start; }
+.ai-capture { min-width: 0; }
+.ai-capture a { display: block; }
+.ai-capture img { border: 1px solid #52664a; border-radius: 3px; }
+.ai-capture a:hover img { border-color: var(--accent); }
+.ai-capture figcaption { line-height: 1.6; }
+.ai-capture-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.ai-pipeline { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid #41543c; }
+.ai-pipeline li { padding: 20px 14px; position: relative; }
+.ai-pipeline li + li { border-left: 1px solid #41543c; }
+.ai-pipeline span { display: block; color: var(--accent); font-size: .65rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .07em; }
+.ai-pipeline strong { display: block; font-size: .85rem; font-weight: 600; line-height: 1.4; }
+.ai-pipeline small { display: block; color: var(--muted); font-size: .74rem; line-height: 1.5; margin-top: 8px; }
+.ai-future-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 26px; }
+.ai-future-grid h5 { color: var(--accent); font-size: 1.05rem; line-height: 1.35; margin-bottom: 12px; }
+.ai-future-grid p { color: var(--muted); font-size: .9rem; }
 .ai-assets-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); align-items: start; gap: 40px; }
 .ai-asset-copy { max-width: 62ch; }
 .ai-asset-copy .ai-description { margin-top: 16px; }
 .ai-asset-copy h5 { color: var(--accent); font-size: 1.2rem; line-height: 1.3; margin: 24px 0 0; }
 .ai-asset-demo { min-width: 0; width: min(100%, 320px); justify-self: center; margin: 0; }
 .ai-asset-demo video { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; background: #000; border: 1px solid #41543c; border-radius: 3px; }
-.ai-achievements { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 32px 0; }
-.ai-achievement-copy { min-width: 0; padding-right: 32px; display: grid; grid-template-rows: subgrid; grid-row: span 3; row-gap: 0; }
-.ai-runtime-title { grid-column: 1 / -1; }
-.ai-runtime-intro { max-width: 85ch; }
-.ai-achievement-copy h5 { color: var(--accent); font-size: 1.2rem; line-height: 1.3; margin: 0; }
-.ai-achievement-copy .ai-description { margin-top: 16px; }
-.ai-quest-copy { border-left: 1px solid #41543c; padding-left: 32px; padding-right: 0; }
-.ai-achievement-example { width: 100%; margin: 24px 0 0; }
-.ai-achievement-example a { display: block; }
-.ai-achievement-example img { width: 100%; height: auto; border: 1px solid #41543c; border-radius: 3px; }
 .ai-plans-title > p { font-size: .85rem; color: var(--muted); margin-top: 8px; }
-.ai-plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; margin-top: 28px; }
-.ai-plan-grid > div { padding-inline: 28px; }
-.ai-plan-grid > div:nth-child(odd) { padding-left: 0; }
-.ai-plan-grid > div:nth-child(even) { padding-right: 0; border-left: 1px solid #41543c; }
-.ai-plan-grid h5 { color: var(--accent); font-size: 1.2rem; line-height: 1.3; margin-block: 0 12px; }
-.ai-plan-grid p { color: var(--muted); font-size: 1rem; }
 .ai-details { border-top: 1px solid #41543c; margin-top: 30px; }
 summary { list-style: none; cursor: pointer; }
 summary::-webkit-details-marker { display: none; }
@@ -208,13 +212,18 @@ figcaption { color: var(--muted); font-size: .74rem; margin-top: 12px; }
   .project-body h3 { font-size: 1.4rem; }
   .about-grid { gap: 50px; }
   .ai-overview { gap: 32px; }
-  .ai-plan-grid > div { padding-inline: 20px; }
 }
 @media (max-width: 800px) {
+  .ai-story-media { grid-template-columns: 1fr; gap: 24px; }
+  .ai-story-copy { max-width: none; }
+  .ai-future-grid { grid-template-columns: 1fr; gap: 24px; }
+  .ai-pipeline { grid-template-columns: 1fr; }
+  .ai-pipeline li { display: grid; grid-template-columns: 90px 1fr; column-gap: 16px; padding: 16px 0; }
+  .ai-pipeline li + li { border-left: 0; border-top: 1px solid #41543c; }
+  .ai-pipeline span { grid-row: span 2; margin: 2px 0 0; }
+  .ai-pipeline small { margin-top: 3px; }
+  .ai-capture-grid { grid-template-columns: 1fr; }
   .ai-assets-grid { grid-template-columns: 1fr; }
-  .ai-achievements { grid-template-columns: 1fr; gap: 26px; }
-  .ai-achievement-copy { padding-right: 0; display: block; grid-row: auto; }
-  .ai-quest-copy { border-left: 0; padding-left: 0; border-top: 1px solid #41543c; padding-top: 26px; }
   .nav-layout { min-height: 76px; flex-wrap: wrap; gap: 0; }
   .brand { min-height: 76px; }
   .menu-toggle:not([hidden]) { display: flex; align-items: center; gap: 18px; border: 1px solid var(--border); background: transparent; color: var(--text); padding: 8px 12px; font-size: .78rem; min-height: 44px; cursor: pointer; }
@@ -237,10 +246,6 @@ figcaption { color: var(--muted); font-size: .74rem; margin-top: 12px; }
   .ai-feature { padding: 28px; }
   .ai-overview { grid-template-columns: 1fr; gap: 28px; }
   .ai-gameplay { justify-self: center; }
-  .ai-plan-grid { grid-template-columns: 1fr; gap: 25px; }
-  .ai-plan-grid > div { padding-inline: 0; }
-  .ai-plan-grid > div:nth-child(even) { border-left: 0; }
-  .ai-plan-grid > div + div { border-left: 0; border-top: 1px solid #41543c; padding-top: 22px; }
   .project-grid { grid-template-columns: 1fr 1fr; row-gap: 38px; }
   .project-card:last-child { grid-column: 1/-1; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .project-card:last-child .project-image img { height: 100%; }
@@ -282,7 +287,6 @@ figcaption { color: var(--muted); font-size: .74rem; margin-top: 12px; }
   .ai-description p { font-size: .85rem; }
   .ai-plans { margin-top: 26px; padding-top: 24px; }
   .ai-plans-title > p { margin-top: 10px; }
-  .ai-plan-grid h5 { margin-bottom: 8px; }
   .ai-details > summary { font-size: .76rem; }
   .ai-flow { display: grid; }
   .ai-flow li:not(:last-child)::after { content: " ↓"; }

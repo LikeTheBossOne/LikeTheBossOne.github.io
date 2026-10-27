@@ -15,12 +15,12 @@ Open `http://127.0.0.1:49989`. Changes appear after refreshing the browser. Stop
 ## Where to edit
 
 - `index.html`: introduction, Warzone contributions and credits, GenAI Dungeon Crawler, selected projects, archived experiments, and contact details.
-- `projects/`: standalone writeups for BossCraft, Mystic Engine, and Scrapyard Scavenger.
+- `projects/`: standalone writeups for BossCraft, Mystic Engine, Scrapyard Scavenger, and Procedural Content Generation.
 - `css/styles.css`: shared styles and responsive layouts.
 - `js/scripts.js`: responsive navigation, email copying, and the footer year. Project content, contact links, and native expandable sections remain usable without JavaScript.
 - `assets/img/portfolio/`: original project screenshots. Older assets are retained for future reuse.
 
-The site deliberately keeps Advent of the Mystics, Procedural Generation, and ECS Library in a collapsed archive instead of the main project grid. BossCraft's repository is private, so its writeup links only to the public code examples.
+The site deliberately keeps Advent of the Mystics and ECS Library in a collapsed archive instead of the main project grid. BossCraft's repository is private, so its writeup links only to the public code examples.
 
 ## GenAI Dungeon Crawler content
 
@@ -28,7 +28,7 @@ The feature uses technical labels as the main headings, without separate eyebrow
 
 Claims follow the mod's implementation and detailed documentation at commit `26863d1`, reviewed October 20, 2026. Some older README/issue text is stale: reactive quest generation and personalized rewards are implemented. Generated quests currently select one supported objective; they do not invent executable mechanics. The Fare Auditor image is an authored boss objective with AI presentation, not evidence of a generated objective. The repository is private, so the public portfolio does not link its sources.
 
-The introduction keeps its original gameplay image. Feature images preserve their full aspect ratios, link to full-size captures, and include descriptive alt text, intrinsic dimensions, and lazy loading. Text and images stack below 800px. The architecture sequence becomes a vertical list on narrow screens, and the three future directions become one column.
+The introduction keeps its original gameplay image. Feature images preserve their full aspect ratios, link to full-size captures, and include descriptive alt text, intrinsic dimensions, and lazy loading. The showcase displays one chapter at a time through eight bottom tabs, including Overview. Desktop panels share a grid cell to keep the selector height steady. Below 800px, text and images stack, inactive panels leave the layout, and the tab strip scrolls horizontally. Arrow keys, Home, and End navigate tabs; Previous and Next wrap through sections. Inactive content is inert and hidden from assistive technology. Leaving Assets pauses its video. Without JavaScript, all chapters remain readable and the selector stays hidden. The architecture sequence and planned additions use vertical lists within their chapters.
 
 New AI examples come from a dedicated scripted capture in the mod worktree, using real provider output and production validation. Keep image captions to short labels and record detailed generation/setup provenance in `assets/img/portfolio/ai-minecraft/CAPTURES.md`. Scripted or forced recognition demonstrates output and delivery, not natural award frequency, balance, or long-term relationship evolution. Do not substitute authored fixture text for real AI output.
 
@@ -41,3 +41,7 @@ New AI examples come from a dedicated scripted capture in the mod worktree, usin
 - Keep public claims scoped to confirmed contributions; do not add confidential implementation details.
 
 GitHub Pages serves these files directly. There is no automatic publishing command in this repository; review changes before pushing to the branch configured for Pages.
+
+## Procedural Content Generation
+
+Restored from the previous portfolio at commit `20180e3`. The project card and `projects/pcg.html` retain the Java/Processing course context, generation algorithm, four original code-example links, three output screenshots, and two reference images. The selected-project grid uses two columns on desktop and tablet and one on mobile.

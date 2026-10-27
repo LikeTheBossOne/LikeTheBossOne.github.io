@@ -69,12 +69,11 @@
     <section class="section projects-section" id="portfolio" aria-label="Selected projects">
       <div class="container">
         <article class="ai-feature" id="ai-minecraft" aria-labelledby="ai-title">
-          <div class="ai-feature-header"><span class="status-label">In development</span></div>
-          <div class="ai-overview">
+          <div class="ai-feature-header"><div><h3 id="ai-title">GenAI Dungeon Crawler</h3><p class="project-meta">Minecraft NeoForge mod</p></div><span class="status-label">In development</span></div>
+          <div class="ai-panels">
+          <div class="ai-overview ai-panel" id="ai-panel-overview" data-label="Overview">
             <div class="ai-copy">
-              <h3 id="ai-title">GenAI Dungeon Crawler</h3>
-              <p class="project-meta">Minecraft NeoForge mod</p>
-              <p class="ai-tagline">A dungeon with<br>a mind of its own.</p>
+              <h4 class="ai-tagline">A dungeon with<br>a mind of its own.</h4>
               <div class="ai-description"><p>A single-player dungeon RPG inside Minecraft, inspired by Matt Dinniman’s LitRPG series <a href="https://mattdinniman.com/books/dungeon-crawler-carl/"><cite>Dungeon Crawler Carl</cite></a>. Survival, spectacle, and your relationship with the dungeon’s AI host shape the experience.</p><p>The Living AI Director is an opinionated host with a persistent personality and campaign memory. It uses generative AI to shape each floor’s story, react to your choices, and adapt encounters you have yet to discover.</p></div>
             </div>
             <figure class="ai-gameplay">
@@ -82,7 +81,7 @@
               <figcaption>Dungeon combat</figcaption>
             </figure>
           </div>
-          <section class="ai-story ai-story-media ai-plans" aria-labelledby="ai-relationship-title">
+          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-relationship" data-label="Personality" aria-labelledby="ai-relationship-title">
             <div class="ai-story-copy">
               <h4 id="ai-relationship-title">Personality & memory</h4>
               <div class="ai-description"><p>The System AI has a persistent personality, but its opinion of you can change. The tactics you repeat and the choices you make become part of your shared history, giving its sarcasm, grudging respect, and later callbacks something personal to draw on.</p><p>That relationship is grounded in confirmed gameplay. The host’s identity, changing attitude, and supporting events are saved separately, so a new remark doesn’t rewrite what happened—and a different approach can give it reason to reconsider.</p></div>
@@ -92,7 +91,7 @@
               <figcaption>System AI · Recent reactions</figcaption>
             </figure>
           </section>
-          <section class="ai-story ai-story-media ai-plans" aria-labelledby="ai-quests-title">
+          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-quests" data-label="Quests" aria-labelledby="ai-quests-title">
             <div class="ai-story-copy">
               <h4 id="ai-quests-title">Reactive quests</h4>
               <div class="ai-description"><p>A discovery, close call, or unusual tactic can become the starting point for an optional quest. The AI chooses an objective from the dungeon’s available interactions and gives it a title, introduction, and voice of its own.</p><p>Those objectives refer to real places, enemies, and objects. Before a quest appears, the game checks its targets, prerequisites, remaining time, and ownership. A past accomplishment can inspire the next challenge; it cannot automatically complete it.</p></div>
@@ -102,7 +101,7 @@
               <figcaption>Loose Teeth, Loose Ends · Side quest</figcaption>
             </figure>
           </section>
-          <section class="ai-story ai-plans" aria-labelledby="ai-rewards-title">
+          <section class="ai-story ai-plans ai-panel" id="ai-panel-rewards" data-label="Rewards" aria-labelledby="ai-rewards-title">
             <div class="ai-story-copy ai-story-wide">
               <h4 id="ai-rewards-title">Achievements & personalized loot</h4>
               <div class="ai-description"><p>The AI can recognize an unusual combination of actions with an original achievement, beyond a fixed checklist. It decides whether the moment deserves an award, then delivers its verdict with a punchline, a mock accolade, or backhanded praise.</p><p>Rewards can include custom equipment with original names, flavor, and useful properties. Recent actions, practiced skills, and current gear inform the selection: a utility-focused player can receive different bonuses from a ranged or support build. The game validates each allocation, saves the box’s contents, and ensures that opening it cannot pay out twice.</p></div>
@@ -118,7 +117,7 @@
             </figure>
             </div>
           </section>
-          <section class="ai-story ai-plans" aria-labelledby="ai-architecture-title">
+          <section class="ai-story ai-plans ai-panel" id="ai-panel-architecture" data-label="Architecture" aria-labelledby="ai-architecture-title">
             <div class="ai-story-copy ai-story-wide">
               <h4 id="ai-architecture-title">Runtime architecture</h4>
               <div class="ai-description"><p>I chose Minecraft with NeoForge for its broad event bus: native hooks into the player’s actions and the surrounding world. Confirmed events feed the Director’s memory and give its decisions context.</p><p>The model proposes actions through a supported vocabulary. Game code checks whether they are legal in the current state before committing them. This gives the host room to improvise while preserving active fights, completed objectives, and earned rewards. Delayed responses are checked again so an old proposal cannot change a run that has moved on.</p></div>
@@ -131,7 +130,7 @@
               <li><span>Commit</span><strong>Saved outcome</strong><small>Persistent state and delivery records</small></li>
             </ol>
           </section>
-          <section class="ai-story ai-story-media ai-plans" aria-labelledby="ai-workbench-title">
+          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-workbench" data-label="Tooling" aria-labelledby="ai-workbench-title">
             <div class="ai-story-copy">
               <h4 id="ai-workbench-title">Developer tooling</h4>
               <div class="ai-description"><p>Every session records how the Director responds. An in-game event log and a local experiment workbench let me follow the evidence behind a request, inspect the model’s response, and see why the game accepted, repaired, or rejected it.</p><p>The workbench brings together request history, retries, latency, and reported usage and cost. That makes it possible to investigate both engineering failures and creative problems, such as a host that keeps repeating the same joke. Successful generation and successful reward delivery are tracked separately.</p></div>
@@ -141,7 +140,7 @@
               <figcaption>Quest inspector · Saved conditions</figcaption>
             </figure>
           </section>
-          <section class="ai-assets ai-story ai-plans" aria-labelledby="ai-assets-title">
+          <section class="ai-assets ai-story ai-plans ai-panel" id="ai-panel-assets" data-label="Assets" aria-labelledby="ai-assets-title">
             <div class="ai-assets-grid">
               <div class="ai-asset-copy">
                 <h4 id="ai-assets-title">Asset creation</h4>
@@ -152,7 +151,7 @@
                 </div>
               </div>
               <figure class="ai-asset-demo">
-                <video controls autoplay muted loop playsinline preload="metadata" poster="assets/img/portfolio/ai-minecraft/scraptooth-goblin.png" aria-label="Scraptooth Goblin walk animation">
+                <video controls muted loop playsinline preload="metadata" poster="assets/img/portfolio/ai-minecraft/scraptooth-goblin.png" aria-label="Scraptooth Goblin walk animation">
                   <source src="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4" type="video/mp4">
                   <a href="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4">Watch the Scraptooth Goblin walk animation.</a>
                 </video>
@@ -160,7 +159,7 @@
               </figure>
             </div>
           </section>
-          <section class="ai-story ai-plans" aria-labelledby="ai-future-title">
+          <section class="ai-story ai-plans ai-panel" id="ai-panel-future" data-label="Planned" aria-labelledby="ai-future-title">
             <h4 id="ai-future-title">Planned additions</h4>
             <div class="ai-future-grid">
               <div><h5>Characters with their own agendas</h5><p>Recurring NPCs with distinct goals, relationships, and knowledge—characters who can remember your help, disagree with the host, and want different outcomes.</p></div>
@@ -168,6 +167,11 @@
               <div><h5>Deliberate encounter difficulty</h5><p>Director control over future enemy levels: easier encounters, harder optional threats, or stronger rivals, within defined limits that preserve revealed enemies and active fights.</p></div>
             </div>
           </section>
+          </div>
+          <div class="ai-selector" hidden>
+            <div class="ai-tabs" role="tablist" aria-label="GenAI Dungeon Crawler sections"></div>
+            <div class="ai-step-controls"><button type="button" data-ai-step="-1" aria-label="Previous section">Previous</button><button type="button" data-ai-step="1" aria-label="Next section">Next</button></div>
+          </div>
         </article>
 
         <div class="project-grid">
@@ -183,12 +187,15 @@
             <a class="project-image" href="projects/scrapyard-scavenger.html" aria-label="Explore Scrapyard Scavenger"><img src="assets/img/portfolio/scrapyard.png" width="1415" height="972" alt="The Scrapyard Scavenger multiplayer lobby in an abandoned industrial yard." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
             <div class="project-body"><h3><a href="projects/scrapyard-scavenger.html">Scrapyard Scavenger</a></h3><p class="project-meta">Team project · Unity · Photon PUN</p><p>A multiplayer FPS built by a seven-person team. I led the team and worked on movement, networking, and gameplay systems.</p><ul class="tags" aria-label="Project focuses"><li>Team leadership</li><li>Multiplayer</li><li>Game modes</li></ul><a class="text-link" href="projects/scrapyard-scavenger.html">See my contributions <span aria-hidden="true">↗</span></a></div>
           </article>
+          <article class="project-card">
+            <a class="project-image" href="projects/pcg.html" aria-label="Explore Procedural Content Generation"><img src="assets/img/portfolio/pcg.png" width="495" height="351" alt="Generated tile-based dungeon with green rooms connected by winding corridors." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
+            <div class="project-body"><h3><a href="projects/pcg.html">Procedural Content Generation</a></h3><p class="project-meta">Game AI · Java · Processing</p><p>A dungeon generator inspired by Pokémon Mystery Dungeon, combining randomized rooms, graph algorithms, and tile-based hallways.</p><ul class="tags" aria-label="Project focuses"><li>Dungeon generation</li><li>Delaunay triangulation</li><li>Spanning trees</li></ul><a class="text-link" href="projects/pcg.html">Explore the generator <span aria-hidden="true">↗</span></a></div>
+          </article>
         </div>
 
         <details class="archive"><summary><span>Earlier experiments <span class="archive-note">A few projects from the archive</span></span><span class="details-symbol" aria-hidden="true">+</span></summary><div class="archive-list">
           <a href="https://github.com/LikeTheBossOne/ECS-Engine"><span><strong>ECS Library</strong><small>A from-scratch exploration of data-oriented engine architecture.</small></span><span aria-hidden="true">↗</span></a>
           <a href="https://github.com/LikeTheBossOne/AdventOfTheMystics"><span><strong>Advent of the Mystics</strong><small>Archived Unreal Engine RPG prototype using the Gameplay Ability System.</small></span><span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/LikeTheBossOne/ProceduralContentGen"><span><strong>Procedural Generation</strong><small>Archived dungeon-generation experiment in Java and Processing.</small></span><span aria-hidden="true">↗</span></a>
         </div></details>
       </div>
     </section>

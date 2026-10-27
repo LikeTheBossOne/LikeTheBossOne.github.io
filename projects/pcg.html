@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A dungeon generator inspired by Pokémon Mystery Dungeon, built with Java and Processing. Project by Brendan Boss.">
+  <meta name="theme-color" content="#111816">
+  <meta property="og:title" content="Procedural Content Generation | Brendan Boss">
+  <meta property="og:description" content="A dungeon generator inspired by Pokémon Mystery Dungeon, built with Java and Processing.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://likethebossone.github.io/projects/pcg.html">
+  <meta property="og:image" content="https://likethebossone.github.io/assets/img/portfolio/pcg.png">
+  <meta property="og:image:alt" content="Generated tile-based dungeon with green rooms connected by winding corridors.">
+  <link rel="canonical" href="https://likethebossone.github.io/projects/pcg.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/scripts.js" defer></script>
+  <title>Procedural Content Generation | Brendan Boss</title>
+</head>
+<body id="page-top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav-layout">
+    <a class="brand" href="../index.html" aria-label="Brendan Boss, home"><span class="brand-mark" aria-hidden="true">b.</span>Brendan Boss</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="../index.html#professional">Experience</a><a href="../index.html#portfolio">Projects</a><a href="../index.html#about">About</a><a class="nav-contact" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <header class="case-header container">
+      <a class="back-link" href="../index.html#portfolio">← All projects</a>
+      <h1>Procedural Content Generation</h1>
+      <p class="case-lead">A dungeon generator inspired by Pokémon Mystery Dungeon, built with Java and Processing.</p>
+      <p class="project-meta">Procedural generation · Game AI · NC State University</p>
+      <dl class="case-meta"><div><dt>My role</dt><dd>Dungeon generation</dd></div><div><dt>Built with</dt><dd>Java · Processing</dd></div></dl>
+      <a class="button button-primary" href="https://github.com/LikeTheBossOne/ProceduralContentGen">View source on GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <figure class="case-cover container"><img src="../assets/img/portfolio/pcg.png" width="495" height="351" alt="Generated tile-based dungeon with green rooms connected by winding corridors." fetchpriority="high"><figcaption>One of the original generated dungeon layouts.</figcaption></figure>
+    <div class="case-content container">
+      <section><h2>From rooms to a dungeon</h2><p>For CSC 484 (Game AI) at NC State University, I was tasked with generating larger areas connected by smaller passages. I wanted to recreate the room-and-hallway layouts of Pokémon Mystery Dungeon, using Java and Processing.</p><p>The generator combines random room placement with a graph of possible connections, then turns those connections into horizontal and vertical corridors.</p><figure><img src="../assets/img/portfolio/pmd.png" width="240" height="160" loading="lazy" alt="Reference dungeon layout from Pokémon Mystery Dungeon."><figcaption>Pokémon Mystery Dungeon · Original layout reference</figcaption></figure></section>
+      <section><h2>Placing the rooms</h2><p>The algorithm makes a configurable number of attempts to place rooms of varying sizes. A room is rejected if it falls within a configurable minimum distance of another room, leaving space between the accepted rooms.</p><p><a href="https://gist.github.com/LikeTheBossOne/bbc42b3be34f3153c425a0f77fda22c8">View the room-placement example ↗</a></p></section>
+      <section><h2>Finding candidate connections</h2><p>I run a Delaunay triangulation over the center points of the rooms to build a set of candidate connections. The goal was to favor connections between nearby rooms rather than connect every room to every other room.</p><p>Those edges become a graph weighted by connection length, ready for the next step.</p><figure><img src="../assets/img/portfolio/delaunay.png" width="339" height="149" loading="lazy" alt="Diagram illustrating Delaunay triangulation."><figcaption>Delaunay triangulation · Connection-building reference</figcaption></figure><p><a href="https://gist.github.com/LikeTheBossOne/f21f3b905fda0058397343977f240a53">View the triangulation example ↗</a></p></section>
+      <section><h2>Keeping the dungeon connected</h2><p>A minimum spanning tree reduces the graph to a connected set of edges. To get closer to the layouts that inspired the project, I also added a configurable percentage of extra edges, creating alternate routes beyond the tree.</p><p><a href="https://gist.github.com/LikeTheBossOne/9bab069372d49e59d3b2db2a7a7dfdda">View the spanning-tree example ↗</a></p></section>
+      <section><h2>Carving the hallways</h2><p>Each selected connection becomes a hallway made from horizontal and vertical sections. The generator randomly chooses which direction to start with, then turns when it reaches the destination’s x or y coordinate.</p><p>After tuning the generation parameters, I rendered the layouts using a tileset from the NES version of Final Fantasy I.</p><p><a href="https://gist.github.com/LikeTheBossOne/88b510e8595e485a2a5d71e7feb619af">View the hallway-generation example ↗</a></p></section>
+      <section><h2>Generated layouts</h2><p>Two more samples from the original application show the variation in room sizes, spacing, and hallway connections.</p><figure><a href="../assets/img/portfolio/pcg2.png"><img src="../assets/img/portfolio/pcg2.png" width="511" height="359" loading="lazy" alt="Second generated dungeon sample showing a different arrangement of rooms and corridors."></a><figcaption>Generated dungeon · Sample 2</figcaption></figure><figure><a href="../assets/img/portfolio/pcg3.png"><img src="../assets/img/portfolio/pcg3.png" width="598" height="462" loading="lazy" alt="Third generated dungeon sample showing another room and corridor layout."></a><figcaption>Generated dungeon · Sample 3</figcaption></figure></section>
+    </div>
+    <div class="case-next container"><div><h2>BossCraft</h2></div><a class="button" href="bosscraft.html">Next project <span aria-hidden="true">→</span></a></div>
+  </main>
+  <footer class="site-footer container"><span>© <span data-year>2026</span> Brendan Boss</span><div><a href="https://github.com/LikeTheBossOne">GitHub</a><a href="https://www.linkedin.com/in/brendanboss/">LinkedIn</a><a href="../index.html#portfolio">All projects ↑</a></div></footer>
+</body>
+</html>

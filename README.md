@@ -45,3 +45,7 @@ GitHub Pages serves these files directly. There is no automatic publishing comma
 ## Procedural Content Generation
 
 Restored from the previous portfolio at commit `20180e3`. The project card and `projects/pcg.html` retain the Java/Processing course context, generation algorithm, four original code-example links, three output screenshots, and two reference images. The selected-project grid uses two columns on desktop and tablet and one on mobile.
+
+## Keilgoure
+
+The project card links to https://dizee5.itch.io/keilgoure and uses its original title artwork. Description and four-person credits come from that page; GMTK Game Jam 2023 participation is confirmed by https://itch.io/jam/gmtk-2023/rate/2157273. No individual implementation responsibilities are claimed.

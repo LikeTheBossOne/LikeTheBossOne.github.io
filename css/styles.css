@@ -356,3 +356,5 @@ figcaption { color: var(--muted); font-size: .74rem; margin-top: 12px; }
   .ai-step-controls { display: none; }
   .has-selector .ai-capture-grid { grid-template-columns: 1fr; }
 }
+
+.project-image-logo img { object-fit: contain; background: #0b0c12; padding: 24px; }

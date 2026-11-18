@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Brendan Boss, game developer exploring generative AI for games. Call of Duty: Warzone experience, custom engines, multiplayer systems, and GenAI Dungeon Crawler.">
   <meta name="author" content="Brendan Boss">
-  <meta name="theme-color" content="#111816">
+  <meta name="theme-color" content="#0c0f14">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Brendan Boss | Game Development & GenAI">
   <meta property="og:description" content="Game development experience on Call of Duty: Warzone, custom engines, and a growing interest in generative AI for games. Explore Brendan Boss’s work and GenAI Dungeon Crawler.">
@@ -15,6 +15,9 @@
   <link rel="canonical" href="https://likethebossone.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" defer></script>
   <title>Brendan Boss | Game Development & GenAI</title>
@@ -23,67 +26,78 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container nav-layout">
-      <a class="brand" href="#page-top" aria-label="Brendan Boss, home"><span class="brand-mark" aria-hidden="true">b.</span>Brendan Boss</a>
+      <a class="brand" href="#page-top" aria-label="Brendan Boss, home">BRENDAN<span aria-hidden="true">.</span>BOSS</a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
       <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#professional">Experience</a>
-        <a href="#portfolio">Projects</a>
-        <a href="#about">About</a>
-        <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        <a href="#professional" data-hotkey="1"><span class="key" aria-hidden="true">1</span>Career</a>
+        <a href="#ai-minecraft" data-hotkey="2"><span class="key" aria-hidden="true">2</span>Quest</a>
+        <a href="#portfolio" data-hotkey="3"><span class="key" aria-hidden="true">3</span>Projects</a>
+        <a href="#about" data-hotkey="4"><span class="key" aria-hidden="true">4</span>Backstory</a>
+        <a href="#contact" data-hotkey="e"><span class="key" aria-hidden="true">E</span>Contact</a>
       </nav>
     </div>
   </header>
+
   <main id="main">
     <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 class="hero-role" id="hero-title"><span class="status-dot" aria-hidden="true"></span> Game Developer</h1>
-        <p class="hero-intro">I’m Brendan, a game developer with experience on Call of Duty: Warzone and a particular interest in generative AI for game development.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#professional">Explore my work <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="#ai-minecraft">GenAI project <span aria-hidden="true">↓</span></a>
+      <div class="frame player-card">
+        <p class="label">Player profile</p>
+        <div>
+          <h1 id="hero-title">Brendan Boss</h1>
+          <p class="player-class">Game Developer · Gameplay Programmer</p>
+        </div>
+        <dl class="stats">
+          <div><dt>Studio</dt><dd>Raven Software</dd></div>
+          <div><dt>Credits</dt><dd>5 Call of Duty titles</dd></div>
+          <div><dt>Languages</dt><dd>C++ · C# · Java · Python</dd></div>
+          <div><dt>Engines</dt><dd>Unreal · Unity · Custom</dd></div>
+          <div><dt>Current quest</dt><dd><a href="#ai-minecraft">GenAI Director</a></dd></div>
+        </dl>
+        <p class="player-intro">I’m a game developer with experience on Call of Duty: Warzone and a particular interest in generative AI for game development.</p>
+        <div class="player-actions">
+          <a href="#ai-minecraft"><span class="key" aria-hidden="true">↓</span>Inspect current quest</a>
+          <a href="#contact"><span class="key" aria-hidden="true">E</span>Send a message</a>
         </div>
       </div>
-      <aside class="hero-feature" aria-label="Featured personal project: GenAI Dungeon Crawler">
-        <a href="#ai-minecraft" class="hero-image-link" aria-label="Explore GenAI Dungeon Crawler">
+      <figure class="frame hero-shot">
+        <a href="#ai-minecraft" aria-label="Explore GenAI Dungeon Crawler">
           <img src="assets/img/portfolio/ai-minecraft/gameplay-8ce22878163d.png" width="1903" height="1040" alt="Minecraft RPG combat against Scraptooth goblins in a dungeon street, with spell effects, a minimap, and health and mana bars." fetchpriority="high">
-          <span class="image-corner" aria-hidden="true">↗</span>
         </a>
-        <div class="hero-feature-caption"><div><h2>GenAI Dungeon Crawler</h2></div><span class="small-note">A living AI host<br>inside Minecraft</span></div>
-        <a href="#ai-minecraft" class="now-link"><span class="status-dot" aria-hidden="true"></span><span>In development <strong>Explore the project</strong></span><span aria-hidden="true">↓</span></a>
-      </aside>
+        <figcaption class="toast"><span class="label">Now building</span><span>GenAI Dungeon Crawler: a Minecraft RPG hosted by an AI that remembers how you play.</span></figcaption>
+      </figure>
     </section>
 
-    <section class="section experience-section" id="professional" aria-labelledby="experience-title">
-      <div class="container">
-        <div class="section-heading"><h2 id="experience-title">On the front lines<br>of <span class="text-accent">Warzone.</span></h2></div>
-        <div class="experience-intro"><span class="studio-name">Raven Software</span><span class="role-label">Gameplay Programmer / Call of Duty</span></div>
-        <div class="contribution-grid">
-          <article class="contribution"><h3>Warzone <br>Ranked</h3><p>Contributed to Warzone’s Ranked feature.</p><span class="category">Competitive play</span></article>
-          <article class="contribution"><h3>Warzone <br>Infil / Exfil</h3><p>Worked on Warzone’s infiltration and exfiltration systems.</p><span class="category">Gameplay systems</span></article>
-          <article class="contribution"><h3>Internal <br>Playtest Tooling</h3><p>Built internal tooling for Warzone playtesting.</p><span class="category">Developer tools</span></article>
-        </div>
-        <div class="credits"><h3>Selected game credits</h3><ul><li><span>Call of Duty:</span> Modern Warfare</li><li><span>Call of Duty:</span> Warzone Caldera</li><li><span>Call of Duty:</span> Modern Warfare II</li><li><span>Call of Duty:</span> Warzone 2</li><li><span>Call of Duty:</span> Modern Warfare III</li></ul></div>
+    <section class="section container" id="professional" aria-labelledby="experience-title">
+      <div class="section-head"><h2 id="experience-title">Warzone Achievements</h2><p class="label">Raven Software · Call of Duty</p></div>
+      <div class="achievements">
+        <article class="frame achievement"><span class="achievement-icon" aria-hidden="true">★</span><div><h3>Warzone Ranked</h3><p>Implemented custom gameplay for the competitive game mode.</p></div></article>
+        <article class="frame achievement"><span class="achievement-icon" aria-hidden="true">⇅</span><div><h3>Warzone Infil &amp; Exfil</h3><p>Worked on Warzone’s infiltration and exfiltration systems and animatics.</p></div></article>
+        <article class="frame achievement"><span class="achievement-icon" aria-hidden="true">⚙</span><div><h3>Internal Playtest Tooling</h3><p>Built internal tooling to improve the feedback pipeline and quality of Warzone playtests.</p></div></article>
       </div>
+      <div class="credits"><h3>Credits</h3><ul><li><span>Call of Duty:</span> Modern Warfare</li><li><span>Call of Duty:</span> Warzone Caldera</li><li><span>Call of Duty:</span> Modern Warfare II</li><li><span>Call of Duty:</span> Warzone 2</li><li><span>Call of Duty:</span> Modern Warfare III</li></ul></div>
     </section>
 
-    <section class="section projects-section" id="portfolio" aria-label="Selected projects">
-      <div class="container">
-        <article class="ai-feature" id="ai-minecraft" aria-labelledby="ai-title">
-          <div class="ai-feature-header"><div><h3 id="ai-title">GenAI Dungeon Crawler</h3><p class="project-meta">Minecraft NeoForge mod</p></div><span class="status-label">In development</span></div>
-          <div class="ai-panels">
-          <div class="ai-overview ai-panel" id="ai-panel-overview" data-label="Overview">
+    <section class="section container" id="ai-minecraft" aria-labelledby="ai-title">
+      <div class="section-head"><h2 id="ai-title">Active quest: GenAI Dungeon Crawler</h2><p class="label status">In development · Minecraft NeoForge mod</p></div>
+      <article class="frame ai-feature">
+        <div class="ai-selector" hidden>
+          <div class="ai-tabs" role="tablist" aria-label="GenAI Dungeon Crawler sections" aria-orientation="vertical"></div>
+          <div class="ai-step-controls"><button type="button" data-ai-step="-1" aria-label="Previous section">◂ Prev</button><button type="button" data-ai-step="1" aria-label="Next section">Next ▸</button></div>
+        </div>
+        <div class="ai-panels">
+          <section class="ai-panel" id="ai-panel-overview" data-label="Overview" aria-labelledby="ai-overview-title">
             <div class="ai-copy">
-              <h4 class="ai-tagline">A dungeon with<br>a mind of its own.</h4>
+              <h3 id="ai-overview-title">A dungeon with a mind of its own.</h3>
               <div class="ai-description"><p>A single-player dungeon RPG inside Minecraft, inspired by Matt Dinniman’s LitRPG series <a href="https://mattdinniman.com/books/dungeon-crawler-carl/"><cite>Dungeon Crawler Carl</cite></a>. Survival, spectacle, and your relationship with the dungeon’s AI host shape the experience.</p><p>The Living AI Director is an opinionated host with a persistent personality and campaign memory. It uses generative AI to shape each floor’s story, react to your choices, and adapt encounters you have yet to discover.</p></div>
             </div>
-            <figure class="ai-gameplay">
-              <img src="assets/img/portfolio/ai-minecraft/gameplay-8ce22878163d.png" width="1903" height="1040" alt="Minecraft RPG combat against Scraptooth goblins in a dungeon street, with spell effects, a minimap, and health and mana bars." loading="lazy">
+            <figure class="ai-capture">
+              <a href="assets/img/portfolio/ai-minecraft/gameplay-8ce22878163d.png" aria-label="View dungeon combat at full size"><img src="assets/img/portfolio/ai-minecraft/gameplay-8ce22878163d.png" width="1903" height="1040" alt="Minecraft RPG combat against Scraptooth goblins in a dungeon street, with spell effects, a minimap, and health and mana bars." loading="lazy"></a>
               <figcaption>Dungeon combat</figcaption>
             </figure>
-          </div>
-          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-relationship" data-label="Personality" aria-labelledby="ai-relationship-title">
-            <div class="ai-story-copy">
-              <h4 id="ai-relationship-title">Personality & memory</h4>
+          </section>
+          <section class="ai-panel" id="ai-panel-relationship" data-label="Personality & memory" aria-labelledby="ai-relationship-title">
+            <div class="ai-copy">
+              <h3 id="ai-relationship-title">Personality & memory</h3>
               <div class="ai-description"><p>The System AI has a persistent personality, but its opinion of you can change. The tactics you repeat and the choices you make become part of your shared history, giving its sarcasm, grudging respect, and later callbacks something personal to draw on.</p><p>That relationship is grounded in confirmed gameplay. The host’s identity, changing attitude, and supporting events are saved separately, so a new remark doesn’t rewrite what happened—and a different approach can give it reason to reconsider.</p></div>
             </div>
             <figure class="ai-capture">
@@ -91,9 +105,9 @@
               <figcaption>System AI · Recent reactions</figcaption>
             </figure>
           </section>
-          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-quests" data-label="Quests" aria-labelledby="ai-quests-title">
-            <div class="ai-story-copy">
-              <h4 id="ai-quests-title">Reactive quests</h4>
+          <section class="ai-panel" id="ai-panel-quests" data-label="Reactive quests" aria-labelledby="ai-quests-title">
+            <div class="ai-copy">
+              <h3 id="ai-quests-title">Reactive quests</h3>
               <div class="ai-description"><p>A discovery, close call, or unusual tactic can become the starting point for an optional quest. The AI chooses an objective from the dungeon’s available interactions and gives it a title, introduction, and voice of its own.</p><p>Those objectives refer to real places, enemies, and objects. Before a quest appears, the game checks its targets, prerequisites, remaining time, and ownership. A past accomplishment can inspire the next challenge; it cannot automatically complete it.</p></div>
             </div>
             <figure class="ai-capture">
@@ -101,25 +115,25 @@
               <figcaption>Loose Teeth, Loose Ends · Side quest</figcaption>
             </figure>
           </section>
-          <section class="ai-story ai-plans ai-panel" id="ai-panel-rewards" data-label="Rewards" aria-labelledby="ai-rewards-title">
-            <div class="ai-story-copy ai-story-wide">
-              <h4 id="ai-rewards-title">Achievements & personalized loot</h4>
-              <div class="ai-description"><p>The AI can recognize an unusual combination of actions with an original achievement, beyond a fixed checklist. It decides whether the moment deserves an award, then delivers its verdict with a punchline, a mock accolade, or backhanded praise.</p><p>Rewards can include custom equipment with original names, flavor, and useful properties. Recent actions, practiced skills, and current gear inform the selection: a utility-focused player can receive different bonuses from a ranged or support build. The game validates each allocation, saves the box’s contents, and ensures that opening it cannot pay out twice.</p></div>
+          <section class="ai-panel" id="ai-panel-rewards" data-label="Rewards & loot" aria-labelledby="ai-rewards-title">
+            <div class="ai-copy">
+              <h3 id="ai-rewards-title">Achievements & personalized loot</h3>
+              <div class="ai-description"><p>The AI can recognize an unusual combination of actions with an original achievement, beyond a fixed checklist. It decides whether the moment deserves an award, then delivers its verdict with a punchline, a mock accolade, or backhanded praise.</p><p>Rewards can include custom equipment with original names, flavor, and useful properties. Recent actions, practiced skills, and current gear inform the selection. The game validates each allocation, saves the box’s contents, and ensures that opening it cannot pay out twice.</p></div>
             </div>
             <div class="ai-capture-grid">
-            <figure class="ai-capture">
-              <a href="assets/img/portfolio/ai-minecraft/one-kill-two-fuses.png" aria-label="View the One Kill, Two Fuses achievement at full size"><img src="assets/img/portfolio/ai-minecraft/one-kill-two-fuses.png" width="1280" height="720" alt="One Kill, Two Fuses achievement with sarcastic AI commentary and its opened reward." loading="lazy"></a>
-              <figcaption>One Kill, Two Fuses · Achievement demo</figcaption>
-            </figure>
-            <figure class="ai-capture">
-              <a href="assets/img/portfolio/ai-minecraft/overzealous-fuse-kit.png" aria-label="View the Overzealous Fuse Kit tooltip at full size"><img src="assets/img/portfolio/ai-minecraft/overzealous-fuse-kit.png" width="1280" height="720" alt="Overzealous Fuse Kit tooltip showing plus two Magic Missile levels and plus one Dexterity." loading="lazy"></a>
-              <figcaption>Overzealous Fuse Kit · Custom loot</figcaption>
-            </figure>
+              <figure class="ai-capture">
+                <a href="assets/img/portfolio/ai-minecraft/one-kill-two-fuses.png" aria-label="View the One Kill, Two Fuses achievement at full size"><img src="assets/img/portfolio/ai-minecraft/one-kill-two-fuses.png" width="1280" height="720" alt="One Kill, Two Fuses achievement with sarcastic AI commentary and its opened reward." loading="lazy"></a>
+                <figcaption>One Kill, Two Fuses · Achievement</figcaption>
+              </figure>
+              <figure class="ai-capture">
+                <a href="assets/img/portfolio/ai-minecraft/overzealous-fuse-kit.png" aria-label="View the Overzealous Fuse Kit tooltip at full size"><img src="assets/img/portfolio/ai-minecraft/overzealous-fuse-kit.png" width="1280" height="720" alt="Overzealous Fuse Kit tooltip showing plus two Magic Missile levels and plus one Dexterity." loading="lazy"></a>
+                <figcaption>Overzealous Fuse Kit · Custom loot</figcaption>
+              </figure>
             </div>
           </section>
-          <section class="ai-story ai-plans ai-panel" id="ai-panel-architecture" data-label="Architecture" aria-labelledby="ai-architecture-title">
-            <div class="ai-story-copy ai-story-wide">
-              <h4 id="ai-architecture-title">Runtime architecture</h4>
+          <section class="ai-panel" id="ai-panel-architecture" data-label="Architecture" aria-labelledby="ai-architecture-title">
+            <div class="ai-copy">
+              <h3 id="ai-architecture-title">Runtime architecture</h3>
               <div class="ai-description"><p>I chose Minecraft with NeoForge for its broad event bus: native hooks into the player’s actions and the surrounding world. Confirmed events feed the Director’s memory and give its decisions context.</p><p>The model proposes actions through a supported vocabulary. Game code checks whether they are legal in the current state before committing them. This gives the host room to improvise while preserving active fights, completed objectives, and earned rewards. Delayed responses are checked again so an old proposal cannot change a run that has moved on.</p></div>
             </div>
             <ol class="ai-pipeline" aria-label="From gameplay to a saved AI-directed outcome">
@@ -130,9 +144,9 @@
               <li><span>Commit</span><strong>Saved outcome</strong><small>Persistent state and delivery records</small></li>
             </ol>
           </section>
-          <section class="ai-story ai-story-media ai-plans ai-panel" id="ai-panel-workbench" data-label="Tooling" aria-labelledby="ai-workbench-title">
-            <div class="ai-story-copy">
-              <h4 id="ai-workbench-title">Developer tooling</h4>
+          <section class="ai-panel" id="ai-panel-workbench" data-label="Developer tooling" aria-labelledby="ai-workbench-title">
+            <div class="ai-copy">
+              <h3 id="ai-workbench-title">Developer tooling</h3>
               <div class="ai-description"><p>Every session records how the Director responds. An in-game event log and a local experiment workbench let me follow the evidence behind a request, inspect the model’s response, and see why the game accepted, repaired, or rejected it.</p><p>The workbench brings together request history, retries, latency, and reported usage and cost. That makes it possible to investigate both engineering failures and creative problems, such as a host that keeps repeating the same joke. Successful generation and successful reward delivery are tracked separately.</p></div>
             </div>
             <figure class="ai-capture">
@@ -140,77 +154,97 @@
               <figcaption>Quest inspector · Saved conditions</figcaption>
             </figure>
           </section>
-          <section class="ai-assets ai-story ai-plans ai-panel" id="ai-panel-assets" data-label="Assets" aria-labelledby="ai-assets-title">
-            <div class="ai-assets-grid">
-              <div class="ai-asset-copy">
-                <h4 id="ai-assets-title">Asset creation</h4>
-                <h5>Meet the Scraptooth Goblin</h5>
-                <div class="ai-description">
-                  <p>An early-floor enemy, built entirely with AI. Its model, textures, rigging, and animations are all generated as part of our custom asset pipeline.</p>
-                  <p>That pipeline runs from Blockbench through GeckoLib into Minecraft, bringing custom creatures into the dungeon. Here, the Scraptooth Goblin shows off its generated walk cycle.</p>
-                </div>
-              </div>
-              <figure class="ai-asset-demo">
-                <video controls muted loop playsinline preload="metadata" poster="assets/img/portfolio/ai-minecraft/scraptooth-goblin.png" aria-label="Scraptooth Goblin walk animation">
-                  <source src="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4" type="video/mp4">
-                  <a href="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4">Watch the Scraptooth Goblin walk animation.</a>
-                </video>
-                <figcaption>Scraptooth Goblin · Walk cycle</figcaption>
-              </figure>
+          <section class="ai-panel" id="ai-panel-assets" data-label="Asset pipeline" aria-labelledby="ai-assets-title">
+            <div class="ai-copy">
+              <h3 id="ai-assets-title">Asset creation</h3>
+              <h4>Meet the Scraptooth Goblin</h4>
+              <div class="ai-description"><p>An early-floor enemy, built entirely with AI. Its model, textures, rigging, and animations are all generated as part of our custom asset pipeline.</p><p>That pipeline runs from Blockbench through GeckoLib into Minecraft, bringing custom creatures into the dungeon. Here, the Scraptooth Goblin shows off its generated walk cycle.</p></div>
             </div>
+            <figure class="ai-capture ai-asset-demo">
+              <video controls muted loop playsinline preload="metadata" poster="assets/img/portfolio/ai-minecraft/scraptooth-goblin.png" aria-label="Scraptooth Goblin walk animation">
+                <source src="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4" type="video/mp4">
+                <a href="assets/video/ai-minecraft/scraptooth-goblin-walk.mp4">Watch the Scraptooth Goblin walk animation.</a>
+              </video>
+              <figcaption>Scraptooth Goblin · Walk cycle</figcaption>
+            </figure>
           </section>
-          <section class="ai-story ai-plans ai-panel" id="ai-panel-future" data-label="Planned" aria-labelledby="ai-future-title">
-            <h4 id="ai-future-title">Planned additions</h4>
-            <div class="ai-future-grid">
-              <div><h5>Characters with their own agendas</h5><p>Recurring NPCs with distinct goals, relationships, and knowledge—characters who can remember your help, disagree with the host, and want different outcomes.</p></div>
-              <div><h5>Bargains that change the game</h5><p>Negotiation that changes supported quest terms, services, or rewards, with explicit commitments the game can enforce and characters can remember.</p></div>
-              <div><h5>Deliberate encounter difficulty</h5><p>Director control over future enemy levels: easier encounters, harder optional threats, or stronger rivals, within defined limits that preserve revealed enemies and active fights.</p></div>
+          <section class="ai-panel" id="ai-panel-future" data-label="Planned" aria-labelledby="ai-future-title">
+            <div class="ai-copy">
+              <h3 id="ai-future-title">Planned additions</h3>
+              <div class="ai-description"><p>Objectives not yet unlocked. Each one keeps the same rule as the rest of the Director: the AI proposes, and the game decides what is allowed.</p></div>
             </div>
+            <ul class="ai-objectives">
+              <li><h4>Characters with their own agendas</h4><p>Recurring NPCs with distinct goals, relationships, and knowledge—characters who can remember your help, disagree with the host, and want different outcomes.</p></li>
+              <li><h4>Bargains that change the game</h4><p>Negotiation that changes supported quest terms, services, or rewards, with explicit commitments the game can enforce and characters can remember.</p></li>
+              <li><h4>Deliberate encounter difficulty</h4><p>Director control over future enemy levels: easier encounters, harder optional threats, or stronger rivals, within defined limits that preserve revealed enemies and active fights.</p></li>
+            </ul>
           </section>
-          </div>
-          <div class="ai-selector" hidden>
-            <div class="ai-tabs" role="tablist" aria-label="GenAI Dungeon Crawler sections"></div>
-            <div class="ai-step-controls"><button type="button" data-ai-step="-1" aria-label="Previous section">Previous</button><button type="button" data-ai-step="1" aria-label="Next section">Next</button></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section container" id="portfolio" aria-labelledby="projects-title">
+      <div class="section-head"><h2 id="projects-title">Save slots</h2><p class="label">5 projects · 2 archived</p></div>
+      <div class="slots">
+        <article class="frame slot slot-wide">
+          <a class="slot-thumb" href="projects/bosscraft.html" tabindex="-1" aria-hidden="true"><img src="assets/img/portfolio/bosscraft-new.png" width="1914" height="1049" alt="" loading="lazy"></a>
+          <div class="slot-info"><h3><a href="projects/bosscraft.html">BossCraft</a></h3><p>A voxel engine built around responsive multiplayer, efficient chunk meshing, and background world generation.</p><ul class="tags" aria-label="Project focuses"><li>Multithreading</li><li>Networking</li><li>Rendering</li></ul><div class="slot-meta label"><span>Custom engine · C++</span><span aria-hidden="true">Load ▸</span></div></div>
+        </article>
+        <article class="frame slot">
+          <a class="slot-thumb" href="projects/mystic.html" tabindex="-1" aria-hidden="true"><img src="assets/img/portfolio/mysticEngine.png" width="1018" height="711" alt="" loading="lazy"></a>
+          <div class="slot-info"><h3><a href="projects/mystic.html">Mystic Engine</a></h3><p>A custom game engine and editor built to explore hot-reloadable game code and component-driven tooling.</p><div class="slot-meta label"><span>C++ · OpenGL</span><span aria-hidden="true">Load ▸</span></div></div>
+        </article>
+        <article class="frame slot">
+          <a class="slot-thumb" href="projects/scrapyard-scavenger.html" tabindex="-1" aria-hidden="true"><img src="assets/img/portfolio/scrapyard.png" width="1415" height="972" alt="" loading="lazy"></a>
+          <div class="slot-info"><h3><a href="projects/scrapyard-scavenger.html">Scrapyard Scavenger</a></h3><p>A multiplayer FPS built by a seven-person team. I led the team and worked on movement, networking, and gameplay systems.</p><div class="slot-meta label"><span>Unity · Photon PUN</span><span aria-hidden="true">Load ▸</span></div></div>
+        </article>
+        <article class="frame slot">
+          <a class="slot-thumb" href="projects/pcg.html" tabindex="-1" aria-hidden="true"><img src="assets/img/portfolio/pcg.png" width="495" height="351" alt="" loading="lazy"></a>
+          <div class="slot-info"><h3><a href="projects/pcg.html">Procedural Content Generation</a></h3><p>A dungeon generator inspired by Pokémon Mystery Dungeon, combining randomized rooms, graph algorithms, and tile-based hallways.</p><div class="slot-meta label"><span>Java · Processing</span><span aria-hidden="true">Load ▸</span></div></div>
+        </article>
+        <article class="frame slot slot-logo" id="keilgoure">
+          <a class="slot-thumb" href="https://dizee5.itch.io/keilgoure" tabindex="-1" aria-hidden="true"><img src="assets/img/portfolio/keilgoure.png" width="2304" height="526" alt="" loading="lazy"></a>
+          <div class="slot-info"><h3><a href="https://dizee5.itch.io/keilgoure">Keilgoure</a></h3><p>Play as the monster defending an ever-changing dungeon from a looting hero. Made with Gary O’Brien, John Rosner, and Dillon Zaugg.</p><div class="slot-meta label"><span>GMTK Game Jam 2023</span><span aria-hidden="true">itch.io ↗</span></div></div>
+        </article>
+        <article class="frame slot slot-archive">
+          <div class="slot-info">
+            <p class="label">Archive</p>
+            <h3>Earlier experiments</h3>
+            <ul class="archive-list">
+              <li><a href="https://github.com/LikeTheBossOne/ECS-Engine"><strong>ECS Library</strong><small>A from-scratch exploration of data-oriented engine architecture.</small></a></li>
+              <li><a href="https://github.com/LikeTheBossOne/AdventOfTheMystics"><strong>Advent of the Mystics</strong><small>Archived Unreal Engine RPG prototype using the Gameplay Ability System.</small></a></li>
+            </ul>
           </div>
         </article>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <a class="project-image" href="projects/bosscraft.html" aria-label="Explore BossCraft"><img src="assets/img/portfolio/bosscraft-new.png" width="1914" height="1049" alt="BossCraft's voxel terrain beneath a square setting sun." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
-            <div class="project-body"><h3><a href="projects/bosscraft.html">BossCraft</a></h3><p class="project-meta">Custom engine · C++ · Multiplayer</p><p>A voxel engine built around responsive multiplayer, efficient chunk meshing, and background world generation.</p><ul class="tags" aria-label="Project focuses"><li>Multithreading</li><li>Networking</li><li>Rendering</li></ul><a class="text-link" href="projects/bosscraft.html">Explore the engine <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="project-card">
-            <a class="project-image" href="projects/mystic.html" aria-label="Explore Mystic Engine"><img src="assets/img/portfolio/mysticEngine.png" width="1018" height="711" alt="Mystic's custom editor showing a 3D crate and editable transform components." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
-            <div class="project-body"><h3><a href="projects/mystic.html">Mystic Engine</a></h3><p class="project-meta">Engine & tools · C++ · OpenGL</p><p>A custom game engine and editor built to explore faster iteration, hot-reloadable game code, and component-driven tooling.</p><ul class="tags" aria-label="Project focuses"><li>Hot reload</li><li>Reflection</li><li>Editor tools</li></ul><a class="text-link" href="projects/mystic.html">Inside the editor <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="project-card">
-            <a class="project-image" href="projects/scrapyard-scavenger.html" aria-label="Explore Scrapyard Scavenger"><img src="assets/img/portfolio/scrapyard.png" width="1415" height="972" alt="The Scrapyard Scavenger multiplayer lobby in an abandoned industrial yard." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
-            <div class="project-body"><h3><a href="projects/scrapyard-scavenger.html">Scrapyard Scavenger</a></h3><p class="project-meta">Team project · Unity · Photon PUN</p><p>A multiplayer FPS built by a seven-person team. I led the team and worked on movement, networking, and gameplay systems.</p><ul class="tags" aria-label="Project focuses"><li>Team leadership</li><li>Multiplayer</li><li>Game modes</li></ul><a class="text-link" href="projects/scrapyard-scavenger.html">See my contributions <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="project-card">
-            <a class="project-image" href="projects/pcg.html" aria-label="Explore Procedural Content Generation"><img src="assets/img/portfolio/pcg.png" width="495" height="351" alt="Generated tile-based dungeon with green rooms connected by winding corridors." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
-            <div class="project-body"><h3><a href="projects/pcg.html">Procedural Content Generation</a></h3><p class="project-meta">Game AI · Java · Processing</p><p>A dungeon generator inspired by Pokémon Mystery Dungeon, combining randomized rooms, graph algorithms, and tile-based hallways.</p><ul class="tags" aria-label="Project focuses"><li>Dungeon generation</li><li>Delaunay triangulation</li><li>Spanning trees</li></ul><a class="text-link" href="projects/pcg.html">Explore the generator <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="project-card" id="keilgoure">
-            <a class="project-image project-image-logo" href="https://dizee5.itch.io/keilgoure" aria-label="View Keilgoure on itch.io"><img src="assets/img/portfolio/keilgoure.png" width="2304" height="526" alt="Keilgoure's white pixel-art title over a dark background with red claw marks." loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></a>
-            <div class="project-body"><h3><a href="https://dizee5.itch.io/keilgoure">Keilgoure</a></h3><p class="project-meta">Team project · GMTK Game Jam 2023 · Windows</p><p>Play as the monster defending an ever-changing dungeon from a looting hero. Defeat other monsters to take their abilities and protect your crypt.</p><p>Created with Gary O’Brien, John Rosner, and Dillon Zaugg.</p><ul class="tags" aria-label="Project focuses"><li>Game jam</li><li>2D action</li><li>Roguelike</li></ul><a class="text-link" href="https://dizee5.itch.io/keilgoure">Download on itch.io <span aria-hidden="true">↗</span></a></div>
-          </article>
-        </div>
-
-        <details class="archive"><summary><span>Earlier experiments <span class="archive-note">A few projects from the archive</span></span><span class="details-symbol" aria-hidden="true">+</span></summary><div class="archive-list">
-          <a href="https://github.com/LikeTheBossOne/ECS-Engine"><span><strong>ECS Library</strong><small>A from-scratch exploration of data-oriented engine architecture.</small></span><span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/LikeTheBossOne/AdventOfTheMystics"><span><strong>Advent of the Mystics</strong><small>Archived Unreal Engine RPG prototype using the Gameplay Ability System.</small></span><span aria-hidden="true">↗</span></a>
-        </div></details>
       </div>
     </section>
 
-    <section class="section about-section" id="about" aria-labelledby="about-title"><div class="container about-grid"><div><h2 id="about-title">Always building.<br>Always learning.</h2></div><div class="about-copy"><p>I’m a game developer interested in the systems behind a great player experience. My work spans multiplayer gameplay, custom engines, and tools for the people making games.</p><p>I’m especially interested in GenAI as both a development tool and part of the player experience. My Minecraft RPG explores a Living AI Director with a persistent personality and memory, creating personal quests, distinctive rewards, and meaningful reactions to how you play.</p><p>I graduated from NC State University in 2020 with a B.S. in Computer Science and a concentration in Game Development.</p><ul class="tags" aria-label="Technologies"><li>C++</li><li>Unreal Engine</li><li>Unity</li><li>OpenGL</li><li>EnTT</li><li>Java / NeoForge</li></ul><a class="text-link" href="https://www.linkedin.com/in/brendanboss/">Find me on LinkedIn <span aria-hidden="true">↗</span></a></div></div></section>
-    <section class="contact-section container" id="contact" aria-labelledby="contact-title"><div><h2 id="contact-title">Have something<br>interesting in mind?</h2></div><div class="contact-options">
-        <a class="contact-link" href="mailto:bbossdev@gmail.com" aria-label="Email Brendan at bbossdev@gmail.com"><span id="contact-email">bbossdev@gmail.com</span> <span aria-hidden="true">↗</span></a>
-        <p class="contact-help">Open your email app, or copy the address.</p>
-        <button class="button copy-email" type="button" hidden>Copy email</button>
-        <p class="copy-status" role="status" aria-live="polite"></p>
-      </div></section>
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-head"><h2 id="about-title">Backstory</h2><p class="label">Always building · Always learning</p></div>
+      <div class="frame backstory">
+        <div class="about-copy">
+          <p>I’m a game developer interested in the systems behind a great player experience. My work spans multiplayer gameplay, custom engines, and tools for the people making games.</p>
+          <p>I’m especially interested in GenAI as both a development tool and part of the player experience. My Minecraft RPG explores a Living AI Director with a persistent personality and memory, creating personal quests, distinctive rewards, and meaningful reactions to how you play.</p>
+        </div>
+        <dl class="stats">
+          <div><dt>Education</dt><dd>NC State University, 2020</dd></div>
+          <div><dt>Degree</dt><dd>B.S. Computer Science</dd></div>
+          <div><dt>Concentration</dt><dd>Game Development</dd></div>
+          <div class="stats-skills"><dt>Skills</dt><dd><ul class="tags" aria-label="Technologies"><li>C++</li><li>Unreal Engine</li><li>Unity</li><li>OpenGL</li><li>EnTT</li><li>Java / NeoForge</li></ul></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="container" id="contact" aria-labelledby="contact-title">
+      <div class="frame contact">
+        <div><p class="label">Interact</p><h2 id="contact-title">Have something interesting in mind?</h2></div>
+        <div class="contact-options">
+          <a class="button button-primary" href="mailto:bbossdev@gmail.com" aria-label="Email Brendan at bbossdev@gmail.com"><span class="key" aria-hidden="true">E</span><span id="contact-email">bbossdev@gmail.com</span></a>
+          <button class="button copy-email" type="button" hidden>Copy email</button>
+          <p class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer container"><span>© <span data-year>2026</span> Brendan Boss</span><div><a href="https://github.com/LikeTheBossOne">GitHub</a><a href="https://www.linkedin.com/in/brendanboss/">LinkedIn</a><a href="#page-top">Back to top ↑</a></div></footer>
 </body>

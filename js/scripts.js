@@ -40,6 +40,10 @@
       tab.type = 'button';
       tab.id = `ai-tab-${index}`;
       tab.textContent = panel.dataset.label;
+      const step = document.createElement('small');
+      step.setAttribute('aria-hidden', 'true');
+      step.textContent = index === 0 ? 'MAIN' : String(index).padStart(2, '0');
+      tab.append(step);
       tab.setAttribute('role', 'tab');
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('role', 'tabpanel');
@@ -71,7 +75,7 @@
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', () => select(index));
       tab.addEventListener('keydown', event => {
-        const destinations = { ArrowRight: selected + 1, ArrowLeft: selected - 1, Home: 0, End: panels.length - 1 };
+        const destinations = { ArrowRight: selected + 1, ArrowDown: selected + 1, ArrowLeft: selected - 1, ArrowUp: selected - 1, Home: 0, End: panels.length - 1 };
         if (event.key in destinations) {
           event.preventDefault();
           select(destinations[event.key], true);
@@ -81,6 +85,11 @@
     showcase.querySelectorAll('[data-ai-step]').forEach(button => {
       button.addEventListener('click', () => select(selected + Number(button.dataset.aiStep)));
     });
+    // The quest log is a vertical list on wide screens and a scrolling row on narrow ones.
+    const wide = window.matchMedia('(min-width: 1001px)');
+    const orient = () => tablist.setAttribute('aria-orientation', wide.matches ? 'vertical' : 'horizontal');
+    wide.addEventListener('change', orient);
+    orient();
     showcase.classList.add('has-selector');
     selector.hidden = false;
     select(0);
@@ -106,6 +115,26 @@
       } finally {
         copyButton.disabled = false;
       }
+    });
+  }
+  // Number-key shortcuts shown on the nav keycaps (1–4, E). Ignored while typing or with modifiers.
+  const hotkeys = new Map([...document.querySelectorAll('[data-hotkey]')].map(link => [link.dataset.hotkey, link]));
+  if (hotkeys.size) {
+    document.addEventListener('keydown', (event) => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.repeat) return;
+      if (event.target.closest('input, textarea, select, [contenteditable], [role="tab"], video')) return;
+      const link = hotkeys.get(event.key.toLowerCase());
+      if (!link) return;
+      const url = new URL(link.href);
+      event.preventDefault();
+      if (url.pathname !== location.pathname) {
+        location.href = url.href;
+        return;
+      }
+      const target = document.getElementById(url.hash.slice(1));
+      if (!target) return;
+      target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      history.replaceState(null, '', url.hash);
     });
   }
   document.querySelectorAll('[data-year]').forEach((element) => {
